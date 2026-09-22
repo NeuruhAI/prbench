@@ -5,3 +5,4 @@ __pycache__/
 .env
 *.salt
 salt.txt
+.wrangler/
