@@ -14,15 +14,24 @@ TRAP_LABELS = {
 
 
 def best_runs(results_dir, split):
-    best = {}
-    for p in sorted(Path(results_dir).glob("*.json")):
+    """One row per solver: all of its runs on this split merged, newest answer per item wins.
+    (Replaces best-of selection, which overstated scores.)"""
+    from .score import summarize
+    by_solver = {}
+    for p in sorted(Path(results_dir).glob("*.json"), key=lambda q: q.stat().st_mtime):
         r = json.loads(p.read_text())
         if r["split"] != split:
             continue
-        cur = best.get(r["solver"])
-        if cur is None or r["summary"]["composite"] > cur["summary"]["composite"]:
-            best[r["solver"]] = r
-    return sorted(best.values(), key=lambda r: -r["summary"]["composite"])
+        m = by_solver.setdefault(r["solver"], {"solver": r["solver"], "split": split, "run_ids": [], "items": {}})
+        m["run_ids"].append(r["run_id"])
+        for row in r["items"]:
+            m["items"][row["id"]] = row
+    out = []
+    for m in by_solver.values():
+        rows = list(m["items"].values())
+        out.append({"solver": m["solver"], "split": split, "run_id": ",".join(m["run_ids"]),
+                    "items": rows, "summary": summarize([row["scores"] for row in rows])})
+    return sorted(out, key=lambda r: -r["summary"]["composite"])
 
 
 def pct(x, d=1):
