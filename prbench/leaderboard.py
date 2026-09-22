@@ -168,7 +168,7 @@ footer b{color:var(--ink);font-family:var(--font-d);letter-spacing:.2em}
     <nav class="tiers">%%NAV%%</nav>
     <div class="eyebrow">Neuruh · Evaluation · %%SPLIT%% split</div>
     <h1>Parcel Reality<br><em>Bench</em></h1>
-    <p class="lede">Frontier models versus <b>as-received county records</b> on the Indiana–Michigan line.
+    <p class="lede">Frontier models versus <b>synthetic parcel packets built in real county file formats</b> from the Indiana–Michigan line.
     Implied-decimal price layouts, related-party transfers, multi-parcel sales, keying errors, duplicates,
     cross-border comps, and jurisdiction inversions. A human records analyst catches these in seconds.
     This measures whether a model does, and whether its confidence interval is honest.</p>
@@ -186,6 +186,11 @@ footer b{color:var(--ink);font-family:var(--font-d);letter-spacing:.2em}
 <h2>Leaderboard</h2>
 <p>Composite = 30% valuation accuracy · 20% interval calibration (Winkler, 80%) · 25% invalid-comp exclusion F1 ·
 15% trap-flag F1 · 10% jurisdiction. Baselines are deterministic pipelines, shown for reference.</p>
+<p><b>Method &amp; limits.</b> Items are procedurally generated, not real transactions, so answers cannot have been
+memorized; the holdout tiers are sealed by published commitment. The rules baseline was written by the benchmark
+author with knowledge of the seven trap classes: treat it as an informed-specialist reference, not a neutral competitor.
+Rows labeled <code>claude.ai:&lt;tier&gt;</code> were run through the consumer Claude app at that tier, so the exact model
+version is not pinned; API rows name their model. Scores on the public tiers are over 60 items per solver.</p>
 <div class="tbl"><table>
 <thead><tr><th>#</th><th>Solver</th><th>Composite</th><th>Valuation</th><th>Calibration</th><th>Exclusion</th><th>Flags</th><th>Jurisdiction</th><th>Median error</th><th>80% cover</th><th>Parse</th></tr></thead>
 <tbody>%%ROWS%%</tbody></table></div>
