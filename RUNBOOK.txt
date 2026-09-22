@@ -1,0 +1,62 @@
+PRBENCH v1.1.1 — RUNBOOK (M1 Mac, Terminal)
+Run each block in order. Paste the whole block, press Return, wait for it to finish.
+Every block ends with a PASS or STOP line. Do not start the next block after a STOP.
+
+======================================================================
+BLOCK 1 — Install v1.1.1 (replaces the old folder)
+======================================================================
+cd ~/neuruh && rm -rf prbench
+ZIP="$(ls -t ~/Downloads/prbench-v1.1.1*.zip | head -1)"; echo "Using: $ZIP"
+unzip -oq "$ZIP" -d ~/neuruh && cd ~/neuruh/prbench
+grep -q 'GENERATOR_VERSION = "1.1.1"' prbench/generate.py && echo "PASS: v1.1.1 installed" || echo "STOP: wrong version"
+
+======================================================================
+BLOCK 2 — Generate items and seal holdouts (uses your existing Keychain salt)
+======================================================================
+cd ~/neuruh/prbench
+python3 -m prbench generate | tee /tmp/prb_gen.txt
+python3 -m prbench commit --salt "$(security find-generic-password -a "$USER" -s prbench-salt -w)"
+grep -q "public_hard\] 60 items  items_sha256=2d1994dd" /tmp/prb_gen.txt && echo "PASS: public_hard hash 2d1994dd" || echo "STOP: public_hard hash wrong"
+
+======================================================================
+BLOCK 3 — Load API keys + verify every model ID with a 1-word test call
+         (writes only passing models into bench.config.json; costs pennies)
+======================================================================
+cd ~/neuruh/prbench
+export ANTHROPIC_API_KEY="$(security find-generic-password -a "$USER" -s anthropic-api-key -w)"
+export OPENAI_API_KEY="$(security find-generic-password -a "$USER" -s openai-api-key -w)"
+export GEMINI_API_KEY="$(security find-generic-password -a "$USER" -s gemini-api-key -w)"
+python3 check_models.py
+
+======================================================================
+BLOCK 4 — Run the benchmark (same Terminal window as Block 3)
+         Runs baselines, then every verified model on all 4 splits,
+         verifies the receipt chain, builds the leaderboard. Takes a while.
+======================================================================
+cd ~/neuruh/prbench
+python3 -m prbench auto --bootstrap
+python3 -m prbench auto && echo "PASS: run + verify complete" || echo "STOP: send the last 20 lines"
+open site/index.html
+
+======================================================================
+BLOCK 5 — Push to a PRIVATE GitHub repo using your existing gh login
+======================================================================
+cd ~/neuruh/prbench
+gh auth status
+git init -q -b main
+git add -A
+if git diff --cached --name-only | grep -qE "holdout(_hard)?/key.jsonl"; then echo "STOP: holdout key staged, do not push"; else
+  git commit -qm "prbench v1.1.1: first multi-provider run" &&
+  gh repo create NeuruhAI/prbench --private --source . --remote origin --push &&
+  gh workflow disable bench.yml -R NeuruhAI/prbench &&
+  echo "PASS: pushed, daily workflow paused until Cloudflare is set up"; fi
+
+======================================================================
+BLOCK 6 — Copy secrets from Keychain to GitHub (never shown on screen)
+======================================================================
+cd ~/neuruh/prbench
+security find-generic-password -a "$USER" -s anthropic-api-key -w | gh secret set ANTHROPIC_API_KEY -R NeuruhAI/prbench
+security find-generic-password -a "$USER" -s openai-api-key -w | gh secret set OPENAI_API_KEY -R NeuruhAI/prbench
+security find-generic-password -a "$USER" -s gemini-api-key -w | gh secret set GEMINI_API_KEY -R NeuruhAI/prbench
+tar czf - data/holdout/key.jsonl data/holdout_hard/key.jsonl | base64 | gh secret set HOLDOUT_KEYS_B64 -R NeuruhAI/prbench
+gh secret list -R NeuruhAI/prbench

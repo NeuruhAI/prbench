@@ -1,0 +1,8 @@
+data/holdout_hard/meta.json:generic-api-key:7
+data/holdout/meta.json:generic-api-key:7
+data/public/meta.json:generic-api-key:7
+data/public_hard/meta.json:generic-api-key:7
+receipts/commitments.json:generic-api-key:5
+receipts/commitments.json:generic-api-key:11
+receipts/ledger.jsonl:generic-api-key:1
+receipts/ledger.jsonl:generic-api-key:2

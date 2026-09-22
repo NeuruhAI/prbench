@@ -1,0 +1,62 @@
+{
+  "providers": {
+    "anthropic": {
+      "enabled": true,
+      "include": [
+        "^claude-(opus|sonnet|haiku)"
+      ],
+      "exclude": []
+    },
+    "openai": {
+      "enabled": true,
+      "include": [
+        "^gpt-",
+        "^o[0-9]"
+      ],
+      "exclude": [
+        "audio",
+        "realtime",
+        "tts",
+        "transcribe",
+        "search",
+        "image",
+        "embedding",
+        "instruct",
+        "moderation"
+      ]
+    },
+    "gemini": {
+      "enabled": true,
+      "include": [
+        "^gemini-.*(pro|flash)"
+      ],
+      "exclude": [
+        "embedding",
+        "image",
+        "tts",
+        "live",
+        "audio",
+        "lite"
+      ]
+    }
+  },
+  "pinned_models": [
+    "anthropic:claude-opus-5",
+    "anthropic:claude-sonnet-5",
+    "anthropic:claude-haiku-4-5-20251001"
+  ],
+  "splits": [
+    "public_hard",
+    "public",
+    "holdout_hard",
+    "holdout"
+  ],
+  "publish_splits": [
+    "public_hard",
+    "public",
+    "holdout_hard"
+  ],
+  "max_new_models_per_run": 4,
+  "sleep_seconds": 1,
+  "saturation_threshold": 0.95
+}

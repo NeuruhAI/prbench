@@ -1,0 +1,14 @@
+[
+  {
+    "split": "holdout",
+    "items_sha256": "a19b7504bdd818e272e0d51c0f31e070e9701018f87c0158fa91a2707b8d7357",
+    "key_commitment": "10b61139662a6efa535df434950c5b3f117c093110e37ed55e580763bf92b34c",
+    "scheme": "sha256(salt || '|' || key.jsonl)"
+  },
+  {
+    "split": "holdout_hard",
+    "items_sha256": "6b4ca933b4031929dbbdb3a5ea2cce03c39856546cf2fedfe8567046f04f7c31",
+    "key_commitment": "5dca96aba3c2a7970e6c98b68ee0ea28e15edc17a755344341bbeec14eff96e9",
+    "scheme": "sha256(salt || '|' || key.jsonl)"
+  }
+]

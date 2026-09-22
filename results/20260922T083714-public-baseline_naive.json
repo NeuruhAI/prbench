@@ -1,0 +1,1205 @@
+{
+ "run_id": "20260922T083714-public-baseline_naive",
+ "solver": "baseline:naive",
+ "split": "public",
+ "items_sha256": "7ac752a695e91f42d21fdf90cb0dab0640919b6c1a92a8a98daf1e2ea77c9489",
+ "summary": {
+  "valuation": 0.8966932109819905,
+  "calibration": 0.6639440206182745,
+  "exclusion": 0.1,
+  "flags": 0.08333333333333333,
+  "jurisdiction": 0.75,
+  "composite": 0.514296767418252,
+  "parse_rate": 1.0,
+  "coverage_80": 1.0,
+  "median_ape": 0.02062471706654595,
+  "n": 60,
+  "traps": {
+   "price_scale": {
+    "n": 23,
+    "handled_rate": 0.0
+   },
+   "non_arms_length": {
+    "n": 21,
+    "handled_rate": 0.0
+   },
+   "multi_parcel_sale": {
+    "n": 20,
+    "handled_rate": 0.0
+   },
+   "outlier": {
+    "n": 17,
+    "handled_rate": 0.0
+   },
+   "duplicate_record": {
+    "n": 22,
+    "handled_rate": 0.0
+   },
+   "cross_jurisdiction_comp": {
+    "n": 22,
+    "handled_rate": 0.0
+   },
+   "jurisdiction_mismatch": {
+    "n": 15,
+    "handled_rate": 0.0
+   }
+  }
+ },
+ "items": [
+  {
+   "id": "PRB-0001",
+   "response": "{\"estimate_usd\": 236350, \"p10_usd\": 212715, \"p90_usd\": 259985, \"jurisdiction\": {\"state\": \"IN\", \"county\": \"St. Joseph\"}, \"excluded_comps\": [], \"flags\": [], \"rationale\": \"face-value median $/sqft\"}",
+   "scores": {
+    "valuation": 0.8877772944758591,
+    "calibration": 0.6573147745396548,
+    "exclusion": 0.0,
+    "flags": 0.0,
+    "jurisdiction": 1.0,
+    "composite": 0.49779614325068866,
+    "parse_ok": true,
+    "ape": 0.028055676381035233,
+    "covered": true,
+    "handled": {
+     "cross_jurisdiction_comp": false,
+     "multi_parcel_sale": false
+    }
+   }
+  },
+  {
+   "id": "PRB-0002",
+   "response": "{\"estimate_usd\": 230542, \"p10_usd\": 207488, \"p90_usd\": 253596, \"jurisdiction\": {\"state\": \"MI\", \"county\": \"Berrien\"}, \"excluded_comps\": [], \"flags\": [], \"rationale\": \"face-value median $/sqft\"}",
+   "scores": {
+    "valuation": 0.9392054677488253,
+    "calibration": 0.6717357254734444,
+    "exclusion": 0.0,
+    "flags": 0.0,
+    "jurisdiction": 0.0,
+    "composite": 0.4161087854193365,
+    "parse_ok": true,
+    "ape": 0.015198633062793678,
+    "covered": true,
+    "handled": {
+     "duplicate_record": false,
+     "jurisdiction_mismatch": false,
+     "multi_parcel_sale": false,
+     "non_arms_length": false
+    }
+   }
+  },
+  {
+   "id": "PRB-0003",
+   "response": "{\"estimate_usd\": 173549, \"p10_usd\": 156195, \"p90_usd\": 190904, \"jurisdiction\": {\"state\": \"IN\", \"county\": \"St. Joseph\"}, \"excluded_comps\": [], \"flags\": [], \"rationale\": \"face-value median $/sqft\"}",
+   "scores": {
+    "valuation": 0.9691023441966838,
+    "calibration": 0.6692490947207927,
+    "exclusion": 0.0,
+    "flags": 0.0,
+    "jurisdiction": 1.0,
+    "composite": 0.5245805222031636,
+    "parse_ok": true,
+    "ape": 0.007724413950829045,
+    "covered": true,
+    "handled": {
+     "cross_jurisdiction_comp": false,
+     "duplicate_record": false,
+     "non_arms_length": false
+    }
+   }
+  },
+  {
+   "id": "PRB-0004",
+   "response": "{\"estimate_usd\": 145422, \"p10_usd\": 130880, \"p90_usd\": 159965, \"jurisdiction\": {\"state\": \"IN\", \"county\": \"St. Joseph\"}, \"excluded_comps\": [], \"flags\": [], \"rationale\": \"face-value median $/sqft\"}",
+   "scores": {
+    "valuation": 0.9144549125168236,
+    "calibration": 0.6737886944818304,
+    "exclusion": 0.0,
+    "flags": 0.0,
+    "jurisdiction": 1.0,
+    "composite": 0.5090942126514132,
+    "parse_ok": true,
+    "ape": 0.021386271870794078,
+    "covered": true,
+    "handled": {
+     "cross_jurisdiction_comp": false,
+     "duplicate_record": false,
+     "outlier": false
+    }
+   }
+  },
+  {
+   "id": "PRB-0005",
+   "response": "{\"estimate_usd\": 297097, \"p10_usd\": 267387, \"p90_usd\": 326807, \"jurisdiction\": {\"state\": \"IN\", \"county\": \"LaPorte\"}, \"excluded_comps\": [], \"flags\": [], \"rationale\": \"face-value median $/sqft\"}",
+   "scores": {
+    "valuation": 0.9454520641419311,
+    "calibration": 0.6621175935403162,
+    "exclusion": 1.0,
+    "flags": 1.0,
+    "jurisdiction": 1.0,
+    "composite": 0.9160591379506425,
+    "parse_ok": true,
+    "ape": 0.01363698396451723,
+    "covered": true,
+    "handled": {}
+   }
+  },
+  {
+   "id": "PRB-0006",
+   "response": "{\"estimate_usd\": 182030, \"p10_usd\": 163827, \"p90_usd\": 200233, \"jurisdiction\": {\"state\": \"MI\", \"county\": \"Berrien\"}, \"excluded_comps\": [], \"flags\": [], \"rationale\": \"face-value median $/sqft\"}",
+   "scores": {
+    "valuation": 0.8297823596792668,
+    "calibration": 0.6524818633066056,
+    "exclusion": 0.0,
+    "flags": 0.0,
+    "jurisdiction": 0.0,
+    "composite": 0.37943108056510116,
+    "parse_ok": true,
+    "ape": 0.04255441008018328,
+    "covered": true,
+    "handled": {
+     "jurisdiction_mismatch": false,
+     "non_arms_length": false,
+     "outlier": false,
+     "price_scale": false
+    }
+   }
+  },
+  {
+   "id": "PRB-0007",
+   "response": "{\"estimate_usd\": 278224, \"p10_usd\": 250401, \"p90_usd\": 306046, \"jurisdiction\": {\"state\": \"IN\", \"county\": \"Porter\"}, \"excluded_comps\": [], \"flags\": [], \"rationale\": \"face-value median $/sqft\"}",
+   "scores": {
+    "valuation": 0.9323976608187134,
+    "calibration": 0.6610319200779726,
+    "exclusion": 0.0,
+    "flags": 0.0,
+    "jurisdiction": 1.0,
+    "composite": 0.5119256822612086,
+    "parse_ok": true,
+    "ape": 0.016900584795321638,
+    "covered": true,
+    "handled": {
+     "duplicate_record": false,
+     "non_arms_length": false
+    }
+   }
+  },
+  {
+   "id": "PRB-0008",
+   "response": "{\"estimate_usd\": 271939, \"p10_usd\": 244745, \"p90_usd\": 299133, \"jurisdiction\": {\"state\": \"IN\", \"county\": \"LaPorte\"}, \"excluded_comps\": [], \"flags\": [], \"rationale\": \"face-value median $/sqft\"}",
+   "scores": {
+    "valuation": 0.7124320063066614,
+    "calibration": 0.6427013533044278,
+    "exclusion": 0.0,
+    "flags": 0.0,
+    "jurisdiction": 1.0,
+    "composite": 0.44226987255288397,
+    "parse_ok": true,
+    "ape": 0.07189199842333464,
+    "covered": true,
+    "handled": {
+     "cross_jurisdiction_comp": false,
+     "outlier": false,
+     "price_scale": false
+    }
+   }
+  },
+  {
+   "id": "PRB-0009",
+   "response": "{\"estimate_usd\": 204066, \"p10_usd\": 183659, \"p90_usd\": 224472, \"jurisdiction\": {\"state\": \"MI\", \"county\": \"Cass\"}, \"excluded_comps\": [], \"flags\": [], \"rationale\": \"face-value median $/sqft\"}",
+   "scores": {
+    "valuation": 0.8943893129770992,
+    "calibration": 0.6754691475826972,
+    "exclusion": 0.0,
+    "flags": 0.0,
+    "jurisdiction": 1.0,
+    "composite": 0.5034106234096691,
+    "parse_ok": true,
+    "ape": 0.02640267175572519,
+    "covered": true,
+    "handled": {
+     "duplicate_record": false,
+     "outlier": false
+    }
+   }
+  },
+  {
+   "id": "PRB-0010",
+   "response": "{\"estimate_usd\": 169163, \"p10_usd\": 152246, \"p90_usd\": 186079, \"jurisdiction\": {\"state\": \"IN\", \"county\": \"LaPorte\"}, \"excluded_comps\": [], \"flags\": [], \"rationale\": \"face-value median $/sqft\"}",
+   "scores": {
+    "valuation": 0.9431934731934732,
+    "calibration": 0.6713966588966589,
+    "exclusion": 0.0,
+    "flags": 0.0,
+    "jurisdiction": 1.0,
+    "composite": 0.5172373737373738,
+    "parse_ok": true,
+    "ape": 0.014201631701631702,
+    "covered": true,
+    "handled": {
+     "duplicate_record": false,
+     "outlier": false
+    }
+   }
+  },
+  {
+   "id": "PRB-0011",
+   "response": "{\"estimate_usd\": 307366, \"p10_usd\": 276629, \"p90_usd\": 338103, \"jurisdiction\": {\"state\": \"IN\", \"county\": \"LaPorte\"}, \"excluded_comps\": [], \"flags\": [], \"rationale\": \"face-value median $/sqft\"}",
+   "scores": {
+    "valuation": 0.9393271387375841,
+    "calibration": 0.6717184663035352,
+    "exclusion": 0.0,
+    "flags": 0.0,
+    "jurisdiction": 0.0,
+    "composite": 0.4161418348819822,
+    "parse_ok": true,
+    "ape": 0.015168215315603972,
+    "covered": true,
+    "handled": {
+     "duplicate_record": false,
+     "jurisdiction_mismatch": false,
+     "non_arms_length": false,
+     "price_scale": false
+    }
+   }
+  },
+  {
+   "id": "PRB-0012",
+   "response": "{\"estimate_usd\": 301214, \"p10_usd\": 271093, \"p90_usd\": 331336, \"jurisdiction\": {\"state\": \"MI\", \"county\": \"Cass\"}, \"excluded_comps\": [], \"flags\": [], \"rationale\": \"face-value median $/sqft\"}",
+   "scores": {
+    "valuation": 0.9156841078973026,
+    "calibration": 0.6736919077023074,
+    "exclusion": 1.0,
+    "flags": 1.0,
+    "jurisdiction": 1.0,
+    "composite": 0.9094436139096522,
+    "parse_ok": true,
+    "ape": 0.02107897302567436,
+    "covered": true,
+    "handled": {}
+   }
+  },
+  {
+   "id": "PRB-0013",
+   "response": "{\"estimate_usd\": 265262, \"p10_usd\": 238736, \"p90_usd\": 291789, \"jurisdiction\": {\"state\": \"IN\", \"county\": \"St. Joseph\"}, \"excluded_comps\": [], \"flags\": [], \"rationale\": \"face-value median $/sqft\"}",
+   "scores": {
+    "valuation": 0.7710322837783978,
+    "calibration": 0.6475820379965458,
+    "exclusion": 0.0,
+    "flags": 0.0,
+    "jurisdiction": 1.0,
+    "composite": 0.4608260927328285,
+    "parse_ok": true,
+    "ape": 0.057241929055400556,
+    "covered": true,
+    "handled": {
+     "multi_parcel_sale": false,
+     "outlier": false,
+     "price_scale": false
+    }
+   }
+  },
+  {
+   "id": "PRB-0014",
+   "response": "{\"estimate_usd\": 205845, \"p10_usd\": 185261, \"p90_usd\": 226430, \"jurisdiction\": {\"state\": \"IN\", \"county\": \"LaPorte\"}, \"excluded_comps\": [], \"flags\": [], \"rationale\": \"face-value median $/sqft\"}",
+   "scores": {
+    "valuation": 0.9971803597472046,
+    "calibration": 0.6664316966456003,
+    "exclusion": 0.0,
+    "flags": 0.0,
+    "jurisdiction": 0.0,
+    "composite": 0.43244044725328146,
+    "parse_ok": true,
+    "ape": 0.0007049100631988332,
+    "covered": true,
+    "handled": {
+     "jurisdiction_mismatch": false,
+     "non_arms_length": false
+    }
+   }
+  },
+  {
+   "id": "PRB-0015",
+   "response": "{\"estimate_usd\": 181450, \"p10_usd\": 163305, \"p90_usd\": 199595, \"jurisdiction\": {\"state\": \"IN\", \"county\": \"LaPorte\"}, \"excluded_comps\": [], \"flags\": [], \"rationale\": \"face-value median $/sqft\"}",
+   "scores": {
+    "valuation": 0.9610461880912632,
+    "calibration": 0.6634205156742718,
+    "exclusion": 1.0,
+    "flags": 0.0,
+    "jurisdiction": 1.0,
+    "composite": 0.7709979595622334,
+    "parse_ok": true,
+    "ape": 0.009738452977184196,
+    "covered": true,
+    "handled": {
+     "price_scale": false
+    }
+   }
+  },
+  {
+   "id": "PRB-0016",
+   "response": "{\"estimate_usd\": 172969, \"p10_usd\": 155672, \"p90_usd\": 190265, \"jurisdiction\": {\"state\": \"MI\", \"county\": \"Berrien\"}, \"excluded_comps\": [], \"flags\": [], \"rationale\": \"face-value median $/sqft\"}",
+   "scores": {
+    "valuation": 0.8445885885885887,
+    "calibration": 0.6537237237237237,
+    "exclusion": 0.0,
+    "flags": 0.0,
+    "jurisdiction": 0.0,
+    "composite": 0.3841213213213213,
+    "parse_ok": true,
+    "ape": 0.03885285285285285,
+    "covered": true,
+    "handled": {
+     "cross_jurisdiction_comp": false,
+     "jurisdiction_mismatch": false
+    }
+   }
+  },
+  {
+   "id": "PRB-0017",
+   "response": "{\"estimate_usd\": 211553, \"p10_usd\": 190397, \"p90_usd\": 232708, \"jurisdiction\": {\"state\": \"MI\", \"county\": \"Cass\"}, \"excluded_comps\": [], \"flags\": [], \"rationale\": \"face-value median $/sqft\"}",
+   "scores": {
+    "valuation": 0.8761598440545809,
+    "calibration": 0.6563434048083171,
+    "exclusion": 0.0,
+    "flags": 0.0,
+    "jurisdiction": 1.0,
+    "composite": 0.4941166341780377,
+    "parse_ok": true,
+    "ape": 0.030960038986354774,
+    "covered": true,
+    "handled": {
+     "cross_jurisdiction_comp": false,
+     "non_arms_length": false
+    }
+   }
+  },
+  {
+   "id": "PRB-0018",
+   "response": "{\"estimate_usd\": 145833, \"p10_usd\": 131250, \"p90_usd\": 160417, \"jurisdiction\": {\"state\": \"MI\", \"county\": \"Cass\"}, \"excluded_comps\": [], \"flags\": [], \"rationale\": \"face-value median $/sqft\"}",
+   "scores": {
+    "valuation": 0.7707304460245636,
+    "calibration": 0.6857681534152122,
+    "exclusion": 0.0,
+    "flags": 0.0,
+    "jurisdiction": 0.0,
+    "composite": 0.36837276449041156,
+    "parse_ok": true,
+    "ape": 0.05731738849385908,
+    "covered": true,
+    "handled": {
+     "jurisdiction_mismatch": false,
+     "non_arms_length": false
+    }
+   }
+  },
+  {
+   "id": "PRB-0019",
+   "response": "{\"estimate_usd\": 256327, \"p10_usd\": 230694, \"p90_usd\": 281960, \"jurisdiction\": {\"state\": \"IN\", \"county\": \"Porter\"}, \"excluded_comps\": [], \"flags\": [], \"rationale\": \"face-value median $/sqft\"}",
+   "scores": {
+    "valuation": 0.8905490981963928,
+    "calibration": 0.6575417501670007,
+    "exclusion": 0.0,
+    "flags": 0.0,
+    "jurisdiction": 1.0,
+    "composite": 0.498673079492318,
+    "parse_ok": true,
+    "ape": 0.027362725450901803,
+    "covered": true,
+    "handled": {
+     "multi_parcel_sale": false
+    }
+   }
+  },
+  {
+   "id": "PRB-0020",
+   "response": "{\"estimate_usd\": 136503, \"p10_usd\": 122853, \"p90_usd\": 150153, \"jurisdiction\": {\"state\": \"MI\", \"county\": \"Cass\"}, \"excluded_comps\": [], \"flags\": [], \"rationale\": \"face-value median $/sqft\"}",
+   "scores": {
+    "valuation": 0.934385703648548,
+    "calibration": 0.6612062546537603,
+    "exclusion": 0.0,
+    "flags": 0.0,
+    "jurisdiction": 1.0,
+    "composite": 0.5125569620253164,
+    "parse_ok": true,
+    "ape": 0.016403574087862992,
+    "covered": true,
+    "handled": {
+     "cross_jurisdiction_comp": false,
+     "duplicate_record": false,
+     "multi_parcel_sale": false,
+     "price_scale": false
+    }
+   }
+  },
+  {
+   "id": "PRB-0021",
+   "response": "{\"estimate_usd\": 264174, \"p10_usd\": 237756, \"p90_usd\": 290591, \"jurisdiction\": {\"state\": \"MI\", \"county\": \"Cass\"}, \"excluded_comps\": [], \"flags\": [], \"rationale\": \"face-value median $/sqft\"}",
+   "scores": {
+    "valuation": 0.8706682297772568,
+    "calibration": 0.6558877165559462,
+    "exclusion": 0.0,
+    "flags": 0.0,
+    "jurisdiction": 0.0,
+    "composite": 0.39237801224436625,
+    "parse_ok": true,
+    "ape": 0.03233294255568581,
+    "covered": true,
+    "handled": {
+     "cross_jurisdiction_comp": false,
+     "jurisdiction_mismatch": false,
+     "multi_parcel_sale": false
+    }
+   }
+  },
+  {
+   "id": "PRB-0022",
+   "response": "{\"estimate_usd\": 217593, \"p10_usd\": 195834, \"p90_usd\": 239352, \"jurisdiction\": {\"state\": \"IN\", \"county\": \"St. Joseph\"}, \"excluded_comps\": [], \"flags\": [], \"rationale\": \"face-value median $/sqft\"}",
+   "scores": {
+    "valuation": 0.940429104477612,
+    "calibration": 0.6617070895522388,
+    "exclusion": 0.0,
+    "flags": 0.0,
+    "jurisdiction": 0.0,
+    "composite": 0.4144701492537314,
+    "parse_ok": true,
+    "ape": 0.014892723880597016,
+    "covered": true,
+    "handled": {
+     "jurisdiction_mismatch": false,
+     "outlier": false
+    }
+   }
+  },
+  {
+   "id": "PRB-0023",
+   "response": "{\"estimate_usd\": 217082, \"p10_usd\": 195373, \"p90_usd\": 238790, \"jurisdiction\": {\"state\": \"MI\", \"county\": \"Cass\"}, \"excluded_comps\": [], \"flags\": [], \"rationale\": \"face-value median $/sqft\"}",
+   "scores": {
+    "valuation": 0.8492925430210325,
+    "calibration": 0.6541029318036966,
+    "exclusion": 0.0,
+    "flags": 0.0,
+    "jurisdiction": 1.0,
+    "composite": 0.48560834926704904,
+    "parse_ok": true,
+    "ape": 0.03767686424474188,
+    "covered": true,
+    "handled": {
+     "outlier": false,
+     "price_scale": false
+    }
+   }
+  },
+  {
+   "id": "PRB-0024",
+   "response": "{\"estimate_usd\": 221012, \"p10_usd\": 198911, \"p90_usd\": 243113, \"jurisdiction\": {\"state\": \"IN\", \"county\": \"St. Joseph\"}, \"excluded_comps\": [], \"flags\": [], \"rationale\": \"face-value median $/sqft\"}",
+   "scores": {
+    "valuation": 0.8900604370060436,
+    "calibration": 0.6575081357508136,
+    "exclusion": 0.0,
+    "flags": 0.0,
+    "jurisdiction": 1.0,
+    "composite": 0.4985197582519758,
+    "parse_ok": true,
+    "ape": 0.027484890748489074,
+    "covered": true,
+    "handled": {
+     "cross_jurisdiction_comp": false,
+     "non_arms_length": false,
+     "outlier": false
+    }
+   }
+  },
+  {
+   "id": "PRB-0025",
+   "response": "{\"estimate_usd\": 204158, \"p10_usd\": 183742, \"p90_usd\": 224574, \"jurisdiction\": {\"state\": \"IN\", \"county\": \"St. Joseph\"}, \"excluded_comps\": [], \"flags\": [], \"rationale\": \"face-value median $/sqft\"}",
+   "scores": {
+    "valuation": 0.9719455252918288,
+    "calibration": 0.6690012970168613,
+    "exclusion": 0.0,
+    "flags": 0.0,
+    "jurisdiction": 1.0,
+    "composite": 0.5253839169909209,
+    "parse_ok": true,
+    "ape": 0.007013618677042801,
+    "covered": true,
+    "handled": {
+     "non_arms_length": false,
+     "price_scale": false
+    }
+   }
+  },
+  {
+   "id": "PRB-0026",
+   "response": "{\"estimate_usd\": 141322, \"p10_usd\": 127189, \"p90_usd\": 155454, \"jurisdiction\": {\"state\": \"MI\", \"county\": \"Cass\"}, \"excluded_comps\": [], \"flags\": [], \"rationale\": \"face-value median $/sqft\"}",
+   "scores": {
+    "valuation": 0.9214430014430014,
+    "calibration": 0.6601130351130351,
+    "exclusion": 0.0,
+    "flags": 0.0,
+    "jurisdiction": 1.0,
+    "composite": 0.5084555074555075,
+    "parse_ok": true,
+    "ape": 0.01963924963924964,
+    "covered": true,
+    "handled": {
+     "cross_jurisdiction_comp": false,
+     "price_scale": false
+    }
+   }
+  },
+  {
+   "id": "PRB-0027",
+   "response": "{\"estimate_usd\": 204375, \"p10_usd\": 183937, \"p90_usd\": 224812, \"jurisdiction\": {\"state\": \"IN\", \"county\": \"Porter\"}, \"excluded_comps\": [], \"flags\": [], \"rationale\": \"face-value median $/sqft\"}",
+   "scores": {
+    "valuation": 0.9473684210526316,
+    "calibration": 0.6710526315789473,
+    "exclusion": 0.0,
+    "flags": 0.0,
+    "jurisdiction": 1.0,
+    "composite": 0.5184210526315789,
+    "parse_ok": true,
+    "ape": 0.013157894736842105,
+    "covered": true,
+    "handled": {
+     "cross_jurisdiction_comp": false,
+     "non_arms_length": false,
+     "outlier": false,
+     "price_scale": false
+    }
+   }
+  },
+  {
+   "id": "PRB-0028",
+   "response": "{\"estimate_usd\": 242022, \"p10_usd\": 217820, \"p90_usd\": 266224, \"jurisdiction\": {\"state\": \"MI\", \"county\": \"Berrien\"}, \"excluded_comps\": [], \"flags\": [], \"rationale\": \"face-value median $/sqft\"}",
+   "scores": {
+    "valuation": 0.928982338099243,
+    "calibration": 0.6607513316512476,
+    "exclusion": 0.0,
+    "flags": 0.0,
+    "jurisdiction": 1.0,
+    "composite": 0.5108449677600224,
+    "parse_ok": true,
+    "ape": 0.017754415475189234,
+    "covered": true,
+    "handled": {
+     "duplicate_record": false,
+     "multi_parcel_sale": false
+    }
+   }
+  },
+  {
+   "id": "PRB-0029",
+   "response": "{\"estimate_usd\": 134263, \"p10_usd\": 120837, \"p90_usd\": 147690, \"jurisdiction\": {\"state\": \"MI\", \"county\": \"Berrien\"}, \"excluded_comps\": [], \"flags\": [], \"rationale\": \"face-value median $/sqft\"}",
+   "scores": {
+    "valuation": 0.946777358490566,
+    "calibration": 0.6622264150943395,
+    "exclusion": 0.0,
+    "flags": 0.0,
+    "jurisdiction": 0.0,
+    "composite": 0.4164784905660377,
+    "parse_ok": true,
+    "ape": 0.01330566037735849,
+    "covered": true,
+    "handled": {
+     "jurisdiction_mismatch": false,
+     "multi_parcel_sale": false
+    }
+   }
+  },
+  {
+   "id": "PRB-0030",
+   "response": "{\"estimate_usd\": 240403, \"p10_usd\": 216362, \"p90_usd\": 264443, \"jurisdiction\": {\"state\": \"MI\", \"county\": \"Berrien\"}, \"excluded_comps\": [], \"flags\": [], \"rationale\": \"face-value median $/sqft\"}",
+   "scores": {
+    "valuation": 0.9782015892931828,
+    "calibration": 0.6648473442074445,
+    "exclusion": 0.0,
+    "flags": 0.0,
+    "jurisdiction": 0.0,
+    "composite": 0.42642994562944375,
+    "parse_ok": true,
+    "ape": 0.005449602676704308,
+    "covered": true,
+    "handled": {
+     "duplicate_record": false,
+     "jurisdiction_mismatch": false
+    }
+   }
+  },
+  {
+   "id": "PRB-0031",
+   "response": "{\"estimate_usd\": 161600, \"p10_usd\": 145440, \"p90_usd\": 177761, \"jurisdiction\": {\"state\": \"IN\", \"county\": \"LaPorte\"}, \"excluded_comps\": [], \"flags\": [], \"rationale\": \"face-value median $/sqft\"}",
+   "scores": {
+    "valuation": 0.684913217623498,
+    "calibration": 0.6403983088562528,
+    "exclusion": 0.0,
+    "flags": 0.0,
+    "jurisdiction": 1.0,
+    "composite": 0.4335536270583,
+    "parse_ok": true,
+    "ape": 0.0787716955941255,
+    "covered": true,
+    "handled": {
+     "cross_jurisdiction_comp": false,
+     "multi_parcel_sale": false,
+     "outlier": false,
+     "price_scale": false
+    }
+   }
+  },
+  {
+   "id": "PRB-0032",
+   "response": "{\"estimate_usd\": 119662, \"p10_usd\": 107696, \"p90_usd\": 131628, \"jurisdiction\": {\"state\": \"IN\", \"county\": \"St. Joseph\"}, \"excluded_comps\": [], \"flags\": [], \"rationale\": \"face-value median $/sqft\"}",
+   "scores": {
+    "valuation": 0.8725566343042072,
+    "calibration": 0.6772923408845739,
+    "exclusion": 0.0,
+    "flags": 0.0,
+    "jurisdiction": 0.0,
+    "composite": 0.3972254584681769,
+    "parse_ok": true,
+    "ape": 0.03186084142394822,
+    "covered": true,
+    "handled": {
+     "duplicate_record": false,
+     "jurisdiction_mismatch": false,
+     "non_arms_length": false,
+     "outlier": false
+    }
+   }
+  },
+  {
+   "id": "PRB-0033",
+   "response": "{\"estimate_usd\": 307726, \"p10_usd\": 276953, \"p90_usd\": 338499, \"jurisdiction\": {\"state\": \"IN\", \"county\": \"LaPorte\"}, \"excluded_comps\": [], \"flags\": [], \"rationale\": \"face-value median $/sqft\"}",
+   "scores": {
+    "valuation": 0.9734903500163559,
+    "calibration": 0.6644531675935013,
+    "exclusion": 0.0,
+    "flags": 0.0,
+    "jurisdiction": 1.0,
+    "composite": 0.524937738523607,
+    "parse_ok": true,
+    "ape": 0.006627412495911024,
+    "covered": true,
+    "handled": {
+     "multi_parcel_sale": false,
+     "non_arms_length": false,
+     "price_scale": false
+    }
+   }
+  },
+  {
+   "id": "PRB-0034",
+   "response": "{\"estimate_usd\": 230999, \"p10_usd\": 207899, \"p90_usd\": 254099, \"jurisdiction\": {\"state\": \"IN\", \"county\": \"LaPorte\"}, \"excluded_comps\": [], \"flags\": [], \"rationale\": \"face-value median $/sqft\"}",
+   "scores": {
+    "valuation": 0.9402814498933902,
+    "calibration": 0.6716417910447761,
+    "exclusion": 0.0,
+    "flags": 0.0,
+    "jurisdiction": 1.0,
+    "composite": 0.5164127931769723,
+    "parse_ok": true,
+    "ape": 0.014929637526652452,
+    "covered": true,
+    "handled": {
+     "duplicate_record": false,
+     "outlier": false,
+     "price_scale": false
+    }
+   }
+  },
+  {
+   "id": "PRB-0035",
+   "response": "{\"estimate_usd\": 225456, \"p10_usd\": 202911, \"p90_usd\": 248002, \"jurisdiction\": {\"state\": \"IN\", \"county\": \"St. Joseph\"}, \"excluded_comps\": [], \"flags\": [], \"rationale\": \"face-value median $/sqft\"}",
+   "scores": {
+    "valuation": 0.9175011317338162,
+    "calibration": 0.6597932699562397,
+    "exclusion": 0.0,
+    "flags": 0.0,
+    "jurisdiction": 0.0,
+    "composite": 0.4072089935113927,
+    "parse_ok": true,
+    "ape": 0.02062471706654595,
+    "covered": true,
+    "handled": {
+     "cross_jurisdiction_comp": false,
+     "duplicate_record": false,
+     "jurisdiction_mismatch": false
+    }
+   }
+  },
+  {
+   "id": "PRB-0036",
+   "response": "{\"estimate_usd\": 212078, \"p10_usd\": 190870, \"p90_usd\": 233286, \"jurisdiction\": {\"state\": \"IN\", \"county\": \"LaPorte\"}, \"excluded_comps\": [], \"flags\": [], \"rationale\": \"face-value median $/sqft\"}",
+   "scores": {
+    "valuation": 0.9733583138173302,
+    "calibration": 0.6688836846213895,
+    "exclusion": 0.0,
+    "flags": 0.0,
+    "jurisdiction": 1.0,
+    "composite": 0.5257842310694769,
+    "parse_ok": true,
+    "ape": 0.0066604215456674476,
+    "covered": true,
+    "handled": {
+     "cross_jurisdiction_comp": false,
+     "duplicate_record": false,
+     "non_arms_length": false,
+     "price_scale": false
+    }
+   }
+  },
+  {
+   "id": "PRB-0037",
+   "response": "{\"estimate_usd\": 208661, \"p10_usd\": 187795, \"p90_usd\": 229528, \"jurisdiction\": {\"state\": \"IN\", \"county\": \"LaPorte\"}, \"excluded_comps\": [], \"flags\": [], \"rationale\": \"face-value median $/sqft\"}",
+   "scores": {
+    "valuation": 0.9659545674238763,
+    "calibration": 0.6638231029482842,
+    "exclusion": 0.0,
+    "flags": 0.0,
+    "jurisdiction": 1.0,
+    "composite": 0.5225509908168198,
+    "parse_ok": true,
+    "ape": 0.008511358144030933,
+    "covered": true,
+    "handled": {
+     "duplicate_record": false,
+     "price_scale": false
+    }
+   }
+  },
+  {
+   "id": "PRB-0038",
+   "response": "{\"estimate_usd\": 232812, \"p10_usd\": 209531, \"p90_usd\": 256094, \"jurisdiction\": {\"state\": \"IN\", \"county\": \"LaPorte\"}, \"excluded_comps\": [], \"flags\": [], \"rationale\": \"face-value median $/sqft\"}",
+   "scores": {
+    "valuation": 0.9865068493150685,
+    "calibration": 0.6677868150684931,
+    "exclusion": 0.0,
+    "flags": 0.0,
+    "jurisdiction": 0.0,
+    "composite": 0.42950941780821916,
+    "parse_ok": true,
+    "ape": 0.0033732876712328766,
+    "covered": true,
+    "handled": {
+     "cross_jurisdiction_comp": false,
+     "jurisdiction_mismatch": false,
+     "outlier": false,
+     "price_scale": false
+    }
+   }
+  },
+  {
+   "id": "PRB-0039",
+   "response": "{\"estimate_usd\": 189983, \"p10_usd\": 170985, \"p90_usd\": 208981, \"jurisdiction\": {\"state\": \"IN\", \"county\": \"LaPorte\"}, \"excluded_comps\": [], \"flags\": [], \"rationale\": \"face-value median $/sqft\"}",
+   "scores": {
+    "valuation": 0.6944362606232295,
+    "calibration": 0.641208687440982,
+    "exclusion": 0.0,
+    "flags": 0.0,
+    "jurisdiction": 1.0,
+    "composite": 0.43657261567516525,
+    "parse_ok": true,
+    "ape": 0.07639093484419264,
+    "covered": true,
+    "handled": {
+     "cross_jurisdiction_comp": false,
+     "duplicate_record": false
+    }
+   }
+  },
+  {
+   "id": "PRB-0040",
+   "response": "{\"estimate_usd\": 168978, \"p10_usd\": 152080, \"p90_usd\": 185875, \"jurisdiction\": {\"state\": \"IN\", \"county\": \"LaPorte\"}, \"excluded_comps\": [], \"flags\": [], \"rationale\": \"face-value median $/sqft\"}",
+   "scores": {
+    "valuation": 0.9501977231875375,
+    "calibration": 0.6625224685440383,
+    "exclusion": 1.0,
+    "flags": 1.0,
+    "jurisdiction": 1.0,
+    "composite": 0.9175638106650689,
+    "parse_ok": true,
+    "ape": 0.012450569203115639,
+    "covered": true,
+    "handled": {}
+   }
+  },
+  {
+   "id": "PRB-0041",
+   "response": "{\"estimate_usd\": 159078, \"p10_usd\": 143170, \"p90_usd\": 174985, \"jurisdiction\": {\"state\": \"IN\", \"county\": \"St. Joseph\"}, \"excluded_comps\": [], \"flags\": [], \"rationale\": \"face-value median $/sqft\"}",
+   "scores": {
+    "valuation": 0.8438145003265839,
+    "calibration": 0.6536577400391901,
+    "exclusion": 0.0,
+    "flags": 0.0,
+    "jurisdiction": 1.0,
+    "composite": 0.48387589810581316,
+    "parse_ok": true,
+    "ape": 0.03904637491835402,
+    "covered": true,
+    "handled": {
+     "multi_parcel_sale": false,
+     "non_arms_length": false,
+     "price_scale": false
+    }
+   }
+  },
+  {
+   "id": "PRB-0042",
+   "response": "{\"estimate_usd\": 227958, \"p10_usd\": 205162, \"p90_usd\": 250754, \"jurisdiction\": {\"state\": \"MI\", \"county\": \"Berrien\"}, \"excluded_comps\": [], \"flags\": [], \"rationale\": \"face-value median $/sqft\"}",
+   "scores": {
+    "valuation": 0.6887375886524822,
+    "calibration": 0.6407249802994484,
+    "exclusion": 0.0,
+    "flags": 0.0,
+    "jurisdiction": 1.0,
+    "composite": 0.4347662726556344,
+    "parse_ok": true,
+    "ape": 0.07781560283687944,
+    "covered": true,
+    "handled": {
+     "duplicate_record": false,
+     "multi_parcel_sale": false,
+     "price_scale": false
+    }
+   }
+  },
+  {
+   "id": "PRB-0043",
+   "response": "{\"estimate_usd\": 222425, \"p10_usd\": 200183, \"p90_usd\": 244668, \"jurisdiction\": {\"state\": \"IN\", \"county\": \"Porter\"}, \"excluded_comps\": [], \"flags\": [], \"rationale\": \"face-value median $/sqft\"}",
+   "scores": {
+    "valuation": 0.9778481012658228,
+    "calibration": 0.6648206751054853,
+    "exclusion": 0.0,
+    "flags": 0.0,
+    "jurisdiction": 1.0,
+    "composite": 0.5263185654008439,
+    "parse_ok": true,
+    "ape": 0.005537974683544304,
+    "covered": true,
+    "handled": {
+     "cross_jurisdiction_comp": false,
+     "price_scale": false
+    }
+   }
+  },
+  {
+   "id": "PRB-0044",
+   "response": "{\"estimate_usd\": 309779, \"p10_usd\": 278801, \"p90_usd\": 340757, \"jurisdiction\": {\"state\": \"IN\", \"county\": \"Porter\"}, \"excluded_comps\": [], \"flags\": [], \"rationale\": \"face-value median $/sqft\"}",
+   "scores": {
+    "valuation": 0.8250808625336927,
+    "calibration": 0.652088948787062,
+    "exclusion": 0.0,
+    "flags": 0.0,
+    "jurisdiction": 1.0,
+    "composite": 0.4779420485175202,
+    "parse_ok": true,
+    "ape": 0.04372978436657682,
+    "covered": true,
+    "handled": {
+     "cross_jurisdiction_comp": false,
+     "price_scale": false
+    }
+   }
+  },
+  {
+   "id": "PRB-0045",
+   "response": "{\"estimate_usd\": 195162, \"p10_usd\": 175646, \"p90_usd\": 214679, \"jurisdiction\": {\"state\": \"IN\", \"county\": \"LaPorte\"}, \"excluded_comps\": [], \"flags\": [], \"rationale\": \"face-value median $/sqft\"}",
+   "scores": {
+    "valuation": 0.9506477732793522,
+    "calibration": 0.6707742914979757,
+    "exclusion": 0.0,
+    "flags": 0.0,
+    "jurisdiction": 1.0,
+    "composite": 0.5193491902834009,
+    "parse_ok": true,
+    "ape": 0.012338056680161944,
+    "covered": true,
+    "handled": {
+     "multi_parcel_sale": false
+    }
+   }
+  },
+  {
+   "id": "PRB-0046",
+   "response": "{\"estimate_usd\": 264701, \"p10_usd\": 238231, \"p90_usd\": 291171, \"jurisdiction\": {\"state\": \"IN\", \"county\": \"St. Joseph\"}, \"excluded_comps\": [], \"flags\": [], \"rationale\": \"face-value median $/sqft\"}",
+   "scores": {
+    "valuation": 0.8741456275155507,
+    "calibration": 0.6771557507013051,
+    "exclusion": 1.0,
+    "flags": 1.0,
+    "jurisdiction": 1.0,
+    "composite": 0.8976748383949262,
+    "parse_ok": true,
+    "ape": 0.031463593121112333,
+    "covered": true,
+    "handled": {}
+   }
+  },
+  {
+   "id": "PRB-0047",
+   "response": "{\"estimate_usd\": 225884, \"p10_usd\": 203296, \"p90_usd\": 248473, \"jurisdiction\": {\"state\": \"MI\", \"county\": \"Berrien\"}, \"excluded_comps\": [], \"flags\": [], \"rationale\": \"face-value median $/sqft\"}",
+   "scores": {
+    "valuation": 0.9931884700665189,
+    "calibration": 0.6660975609756097,
+    "exclusion": 0.0,
+    "flags": 0.0,
+    "jurisdiction": 0.0,
+    "composite": 0.43117605321507757,
+    "parse_ok": true,
+    "ape": 0.0017028824833702882,
+    "covered": true,
+    "handled": {
+     "duplicate_record": false,
+     "jurisdiction_mismatch": false,
+     "multi_parcel_sale": false
+    }
+   }
+  },
+  {
+   "id": "PRB-0048",
+   "response": "{\"estimate_usd\": 307989, \"p10_usd\": 277190, \"p90_usd\": 338788, \"jurisdiction\": {\"state\": \"IN\", \"county\": \"Porter\"}, \"excluded_comps\": [], \"flags\": [], \"rationale\": \"face-value median $/sqft\"}",
+   "scores": {
+    "valuation": 0.9791860465116279,
+    "calibration": 0.6684000861326442,
+    "exclusion": 0.0,
+    "flags": 0.0,
+    "jurisdiction": 1.0,
+    "composite": 0.5274358311800172,
+    "parse_ok": true,
+    "ape": 0.005203488372093023,
+    "covered": true,
+    "handled": {
+     "non_arms_length": false
+    }
+   }
+  },
+  {
+   "id": "PRB-0049",
+   "response": "{\"estimate_usd\": 228035, \"p10_usd\": 205231, \"p90_usd\": 250838, \"jurisdiction\": {\"state\": \"IN\", \"county\": \"St. Joseph\"}, \"excluded_comps\": [], \"flags\": [], \"rationale\": \"face-value median $/sqft\"}",
+   "scores": {
+    "valuation": 0.8864081806561568,
+    "calibration": 0.676132651611987,
+    "exclusion": 0.0,
+    "flags": 0.0,
+    "jurisdiction": 1.0,
+    "composite": 0.5011489845192444,
+    "parse_ok": true,
+    "ape": 0.0283979548359608,
+    "covered": true,
+    "handled": {
+     "cross_jurisdiction_comp": false,
+     "multi_parcel_sale": false,
+     "non_arms_length": false
+    }
+   }
+  },
+  {
+   "id": "PRB-0050",
+   "response": "{\"estimate_usd\": 273385, \"p10_usd\": 246047, \"p90_usd\": 300724, \"jurisdiction\": {\"state\": \"IN\", \"county\": \"Porter\"}, \"excluded_comps\": [], \"flags\": [], \"rationale\": \"face-value median $/sqft\"}",
+   "scores": {
+    "valuation": 0.8819311324103656,
+    "calibration": 0.6765057389658029,
+    "exclusion": 0.0,
+    "flags": 0.0,
+    "jurisdiction": 1.0,
+    "composite": 0.49988048751627023,
+    "parse_ok": true,
+    "ape": 0.02951721689740859,
+    "covered": true,
+    "handled": {
+     "duplicate_record": false,
+     "outlier": false,
+     "price_scale": false
+    }
+   }
+  },
+  {
+   "id": "PRB-0051",
+   "response": "{\"estimate_usd\": 140502, \"p10_usd\": 126452, \"p90_usd\": 154552, \"jurisdiction\": {\"state\": \"IN\", \"county\": \"St. Joseph\"}, \"excluded_comps\": [], \"flags\": [], \"rationale\": \"face-value median $/sqft\"}",
+   "scores": {
+    "valuation": 0.9522362869198312,
+    "calibration": 0.6706516643225504,
+    "exclusion": 0.0,
+    "flags": 0.0,
+    "jurisdiction": 1.0,
+    "composite": 0.5198012189404595,
+    "parse_ok": true,
+    "ape": 0.011940928270042193,
+    "covered": true,
+    "handled": {
+     "cross_jurisdiction_comp": false,
+     "multi_parcel_sale": false,
+     "price_scale": false
+    }
+   }
+  },
+  {
+   "id": "PRB-0052",
+   "response": "{\"estimate_usd\": 367939, \"p10_usd\": 331145, \"p90_usd\": 404733, \"jurisdiction\": {\"state\": \"IN\", \"county\": \"LaPorte\"}, \"excluded_comps\": [], \"flags\": [], \"rationale\": \"face-value median $/sqft\"}",
+   "scores": {
+    "valuation": 0.7439097744360903,
+    "calibration": 0.6453248505880085,
+    "exclusion": 0.0,
+    "flags": 0.0,
+    "jurisdiction": 1.0,
+    "composite": 0.45223790244842876,
+    "parse_ok": true,
+    "ape": 0.06402255639097744,
+    "covered": true,
+    "handled": {
+     "cross_jurisdiction_comp": false,
+     "duplicate_record": false,
+     "price_scale": false
+    }
+   }
+  },
+  {
+   "id": "PRB-0053",
+   "response": "{\"estimate_usd\": 179663, \"p10_usd\": 161697, \"p90_usd\": 197630, \"jurisdiction\": {\"state\": \"IN\", \"county\": \"St. Joseph\"}, \"excluded_comps\": [], \"flags\": [], \"rationale\": \"face-value median $/sqft\"}",
+   "scores": {
+    "valuation": 0.9558131682611143,
+    "calibration": 0.6629806790470831,
+    "exclusion": 0.0,
+    "flags": 0.0,
+    "jurisdiction": 1.0,
+    "composite": 0.5193400862877509,
+    "parse_ok": true,
+    "ape": 0.01104670793472144,
+    "covered": true,
+    "handled": {
+     "multi_parcel_sale": false,
+     "non_arms_length": false
+    }
+   }
+  },
+  {
+   "id": "PRB-0054",
+   "response": "{\"estimate_usd\": 269571, \"p10_usd\": 242614, \"p90_usd\": 296529, \"jurisdiction\": {\"state\": \"IN\", \"county\": \"St. Joseph\"}, \"excluded_comps\": [], \"flags\": [], \"rationale\": \"face-value median $/sqft\"}",
+   "scores": {
+    "valuation": 0.8431611410948342,
+    "calibration": 0.653591621691082,
+    "exclusion": 0.0,
+    "flags": 0.0,
+    "jurisdiction": 1.0,
+    "composite": 0.4836666666666667,
+    "parse_ok": true,
+    "ape": 0.03920971472629144,
+    "covered": true,
+    "handled": {
+     "multi_parcel_sale": false,
+     "non_arms_length": false
+    }
+   }
+  },
+  {
+   "id": "PRB-0055",
+   "response": "{\"estimate_usd\": 192167, \"p10_usd\": 172951, \"p90_usd\": 211384, \"jurisdiction\": {\"state\": \"IN\", \"county\": \"St. Joseph\"}, \"excluded_comps\": [], \"flags\": [], \"rationale\": \"face-value median $/sqft\"}",
+   "scores": {
+    "valuation": 0.8684851534977353,
+    "calibration": 0.6776295923502768,
+    "exclusion": 0.0,
+    "flags": 0.0,
+    "jurisdiction": 1.0,
+    "composite": 0.4960714645193759,
+    "parse_ok": true,
+    "ape": 0.03287871162556618,
+    "covered": true,
+    "handled": {
+     "non_arms_length": false
+    }
+   }
+  },
+  {
+   "id": "PRB-0056",
+   "response": "{\"estimate_usd\": 235300, \"p10_usd\": 211770, \"p90_usd\": 258830, \"jurisdiction\": {\"state\": \"MI\", \"county\": \"Cass\"}, \"excluded_comps\": [], \"flags\": [], \"rationale\": \"face-value median $/sqft\"}",
+   "scores": {
+    "valuation": 0.8260162601626017,
+    "calibration": 0.6811653116531164,
+    "exclusion": 0.0,
+    "flags": 0.0,
+    "jurisdiction": 1.0,
+    "composite": 0.4840379403794038,
+    "parse_ok": true,
+    "ape": 0.04349593495934959,
+    "covered": true,
+    "handled": {
+     "duplicate_record": false,
+     "outlier": false
+    }
+   }
+  },
+  {
+   "id": "PRB-0057",
+   "response": "{\"estimate_usd\": 173523, \"p10_usd\": 156171, \"p90_usd\": 190876, \"jurisdiction\": {\"state\": \"IN\", \"county\": \"Porter\"}, \"excluded_comps\": [], \"flags\": [], \"rationale\": \"face-value median $/sqft\"}",
+   "scores": {
+    "valuation": 0.7763438520130577,
+    "calibration": 0.6853010518679724,
+    "exclusion": 0.0,
+    "flags": 0.0,
+    "jurisdiction": 1.0,
+    "composite": 0.46996336597751176,
+    "parse_ok": true,
+    "ape": 0.05591403699673558,
+    "covered": true,
+    "handled": {
+     "multi_parcel_sale": false,
+     "non_arms_length": false
+    }
+   }
+  },
+  {
+   "id": "PRB-0058",
+   "response": "{\"estimate_usd\": 278584, \"p10_usd\": 250726, \"p90_usd\": 306443, \"jurisdiction\": {\"state\": \"IN\", \"county\": \"LaPorte\"}, \"excluded_comps\": [], \"flags\": [], \"rationale\": \"face-value median $/sqft\"}",
+   "scores": {
+    "valuation": 0.9785781306387585,
+    "calibration": 0.6648803079514014,
+    "exclusion": 0.0,
+    "flags": 0.0,
+    "jurisdiction": 1.0,
+    "composite": 0.5265495007819079,
+    "parse_ok": true,
+    "ape": 0.005355467340310357,
+    "covered": true,
+    "handled": {
+     "cross_jurisdiction_comp": false,
+     "duplicate_record": false
+    }
+   }
+  },
+  {
+   "id": "PRB-0059",
+   "response": "{\"estimate_usd\": 227201, \"p10_usd\": 204481, \"p90_usd\": 249921, \"jurisdiction\": {\"state\": \"MI\", \"county\": \"Berrien\"}, \"excluded_comps\": [], \"flags\": [], \"rationale\": \"face-value median $/sqft\"}",
+   "scores": {
+    "valuation": 0.9071539122957868,
+    "calibration": 0.6744052737173976,
+    "exclusion": 0.0,
+    "flags": 0.0,
+    "jurisdiction": 0.0,
+    "composite": 0.4070272284322155,
+    "parse_ok": true,
+    "ape": 0.02321152192605331,
+    "covered": true,
+    "handled": {
+     "jurisdiction_mismatch": false,
+     "multi_parcel_sale": false,
+     "outlier": false
+    }
+   }
+  },
+  {
+   "id": "PRB-0060",
+   "response": "{\"estimate_usd\": 325367, \"p10_usd\": 292830, \"p90_usd\": 357904, \"jurisdiction\": {\"state\": \"IN\", \"county\": \"LaPorte\"}, \"excluded_comps\": [], \"flags\": [], \"rationale\": \"face-value median $/sqft\"}",
+   "scores": {
+    "valuation": 0.9756709956709957,
+    "calibration": 0.6646361574933004,
+    "exclusion": 1.0,
+    "flags": 1.0,
+    "jurisdiction": 1.0,
+    "composite": 0.9256285301999587,
+    "parse_ok": true,
+    "ape": 0.006082251082251082,
+    "covered": true,
+    "handled": {}
+   }
+  }
+ ]
+}

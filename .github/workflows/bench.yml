@@ -1,0 +1,78 @@
+# Parcel Reality Bench — autonomous loop.
+# Daily: detect new model releases -> benchmark on all tiers -> verify receipt chain
+# -> deploy leaderboard to Cloudflare Pages -> commit results + drafts back to the repo.
+# Posting to X is NEVER automated. Drafts land in drafts/ for human review.
+#
+# REPO MUST BE PRIVATE. The public sees only the deployed leaderboard site.
+#
+# Required repository secrets (GitHub repo -> Settings -> Secrets and variables -> Actions):
+#   ANTHROPIC_API_KEY, OPENAI_API_KEY, GEMINI_API_KEY   (any subset; missing providers are skipped)
+#   HOLDOUT_KEYS_B64       tar.gz of both holdout key.jsonl files, base64 (see README)
+#   CLOUDFLARE_API_TOKEN   token with "Cloudflare Pages: Edit" permission
+#   CLOUDFLARE_ACCOUNT_ID  Cloudflare dashboard -> right sidebar "Account ID"
+
+name: bench-auto
+
+on:
+  schedule:
+    - cron: "17 13 * * *"      # daily 13:17 UTC (09:17 Eastern)
+  workflow_dispatch: {}          # manual "Run workflow" button
+
+concurrency:
+  group: bench-auto
+  cancel-in-progress: false      # never run two ledgers at once; the hash chain is sequential
+
+permissions:
+  contents: write
+
+jobs:
+  bench:
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Restore private holdout keys
+        env:
+          HOLDOUT_KEYS_B64: ${{ secrets.HOLDOUT_KEYS_B64 }}
+        run: |
+          if [ -n "$HOLDOUT_KEYS_B64" ]; then
+            echo "$HOLDOUT_KEYS_B64" | base64 -d | tar xzf -
+            echo "holdout keys restored"
+          else
+            echo "::warning::HOLDOUT_KEYS_B64 not set; holdout splits will be skipped"
+          fi
+
+      - name: Discover, benchmark, verify, build site
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python3 -m prbench auto
+
+      - name: Remove holdout keys before anything is committed or deployed
+        if: always()
+        run: rm -f data/holdout/key.jsonl data/holdout_hard/key.jsonl
+
+      - name: Deploy leaderboard to Cloudflare Pages
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy site --project-name=prbench --branch=main
+
+      - name: Commit results, receipts, drafts
+        run: |
+          git config user.name  "prbench-bot"
+          git config user.email "prbench-bot@users.noreply.github.com"
+          git add results receipts drafts site
+          if git diff --cached --quiet; then
+            echo "no changes"
+          else
+            git commit -m "bench: auto run $(date -u +%Y-%m-%dT%H:%MZ)"
+            git push
+          fi

@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en" data-spine="obsidian">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Parcel Reality Bench — Leaderboard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,500..900&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--brass:#b8925a;--brass-dim:#8a6c40;--font-d:"Archivo",sans-serif;--font-b:"Inter",sans-serif;--font-m:"JetBrains Mono",monospace}
+[data-spine=obsidian]{--bg:#0e0e0f;--bg2:#151516;--line:#2a2927;--ink:#ece6da;--mute:#8d887e;--held:#cfc6b4;--fail:#d98b6a}
+[data-spine=bone]{--bg:#f1ece2;--bg2:#e8e1d4;--line:#cfc6b5;--ink:#1a1917;--mute:#6e685d;--held:#1a1917;--fail:#a4482a}
+*{box-sizing:border-box;margin:0}
+body{background:var(--bg);color:var(--ink);font:15px/1.55 var(--font-b);-webkit-font-smoothing:antialiased;transition:background .3s,color .3s}
+.wrap{max-width:1240px;margin:0 auto;padding:56px 32px 96px}
+header{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:end;border-bottom:1px solid var(--line);padding-bottom:40px}
+.eyebrow{font:500 12px/1 var(--font-b);letter-spacing:.18em;text-transform:uppercase;color:var(--brass)}
+h1{font:800 clamp(44px,7vw,96px)/.92 var(--font-d);font-stretch:112%;letter-spacing:-.02em;margin:18px 0 20px}
+h1 em{font-style:normal;color:var(--brass)}
+.lede{max-width:640px;color:var(--mute);font-size:17px}
+.lede b{color:var(--ink);font-weight:600}
+.spine{background:none;border:1px solid var(--line);color:var(--mute);font:500 12px var(--font-b);letter-spacing:.1em;text-transform:uppercase;padding:10px 14px;cursor:pointer}
+.spine:hover{border-color:var(--brass);color:var(--ink)}
+.tiers{display:flex;gap:4px;margin-bottom:28px}
+.tiers a{font:500 12px var(--font-b);letter-spacing:.1em;text-transform:uppercase;color:var(--mute);text-decoration:none;padding:8px 12px;border:1px solid var(--line)}
+.tiers a[aria-current]{color:var(--ink);border-color:var(--brass);box-shadow:inset 0 -2px 0 var(--brass)}
+.strip{display:flex;gap:48px;padding:28px 0;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.strip div span{display:block;font:500 11px var(--font-b);letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+.strip div b{font:700 28px var(--font-d);font-variant-numeric:tabular-nums}
+h2{font:700 13px var(--font-b);letter-spacing:.16em;text-transform:uppercase;margin:64px 0 8px}
+h2+p{color:var(--mute);margin-bottom:24px;max-width:720px}
+.tbl{overflow-x:auto;border-top:1px solid var(--ink)}
+table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
+th{font:500 11px var(--font-b);letter-spacing:.1em;text-transform:uppercase;color:var(--mute);text-align:right;padding:14px 12px;border-bottom:1px solid var(--line);white-space:nowrap}
+th:nth-child(-n+2){text-align:left}
+th small{display:block;letter-spacing:0;text-transform:none;opacity:.7;margin-top:2px}
+td{padding:16px 12px;border-bottom:1px solid var(--line);text-align:right;white-space:nowrap}
+td.rk{text-align:left;color:var(--mute);font-family:var(--font-m);font-size:12px;width:40px}
+td.mdl{text-align:left}
+code{font:500 13px var(--font-m)}
+.kind{display:inline-block;margin-left:10px;font:500 10px var(--font-b);letter-spacing:.12em;text-transform:uppercase;color:var(--mute);border:1px solid var(--line);padding:2px 6px}
+tr.baseline td{color:var(--mute)}
+td.big{font:700 22px var(--font-d)}
+tr.lead td.big{color:var(--brass)}
+tr.lead td.rk{color:var(--brass)}
+tr.lead{box-shadow:inset 3px 0 0 var(--brass)}
+tr{opacity:0;animation:rise .5s ease forwards}
+tr:nth-child(1){animation-delay:.05s}tr:nth-child(2){animation-delay:.1s}tr:nth-child(3){animation-delay:.15s}tr:nth-child(4){animation-delay:.2s}tr:nth-child(5){animation-delay:.25s}tr:nth-child(n+6){animation-delay:.3s}
+thead tr{opacity:1;animation:none}
+@keyframes rise{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+td.st{text-align:center}
+td.st .g{font-size:15px;margin-right:6px}
+td.st .v{font-size:13px}
+td.held{color:var(--held)}
+td.part{color:var(--mute)}
+td.fail{color:var(--fail)}
+td.fail .v{border-bottom:1px dashed var(--fail)}
+td.na{color:var(--mute);opacity:.5}
+.legend{display:flex;gap:24px;margin-top:14px;font-size:13px;color:var(--mute)}
+.legend .fail{color:var(--fail)}
+.prov{margin-top:8px;border-top:1px solid var(--ink)}
+.kv{display:grid;grid-template-columns:260px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid var(--line)}
+.kv span{color:var(--mute);font-size:13px}
+.kv code{word-break:break-all;color:var(--ink)}
+.kv code.b{color:var(--brass)}
+pre{font:13px/1.7 var(--font-m);background:var(--bg2);border:1px solid var(--line);padding:18px 20px;margin-top:20px;overflow-x:auto}
+footer{margin-top:80px;padding-top:24px;border-top:1px solid var(--line);display:flex;justify-content:space-between;color:var(--mute);font-size:13px}
+footer b{color:var(--ink);font-family:var(--font-d);letter-spacing:.2em}
+@media(max-width:720px){.wrap{padding:36px 18px 64px}header{grid-template-columns:1fr}.kv{grid-template-columns:1fr;gap:4px}}
+@media(prefers-reduced-motion:reduce){tr{animation:none;opacity:1}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div>
+    <nav class="tiers"><a href="index.html">Hard</a><a href="public.html">Standard</a><a href="holdout_hard.html" aria-current=page>Holdout · Hard</a></nav>
+    <div class="eyebrow">Neuruh · Evaluation · holdout_hard split</div>
+    <h1>Parcel Reality<br><em>Bench</em></h1>
+    <p class="lede">Frontier models versus <b>as-received county records</b> on the Indiana–Michigan line.
+    Implied-decimal price layouts, related-party transfers, multi-parcel sales, keying errors, duplicates,
+    cross-border comps, and jurisdiction inversions. A human records analyst catches these in seconds.
+    This measures whether a model does, and whether its confidence interval is honest.</p>
+  </div>
+  <button class="spine" onclick="toggle()">Switch spine</button>
+</header>
+
+<div class="strip">
+  <div><span>Items</span><b>200</b></div>
+  <div><span>Trap classes</span><b>7</b></div>
+  <div><span>Solvers ranked</span><b>2</b></div>
+  <div><span>Signed receipts</span><b>1050</b></div>
+</div>
+
+<h2>Leaderboard</h2>
+<p>Composite = 30% valuation accuracy · 20% interval calibration (Winkler, 80%) · 25% invalid-comp exclusion F1 ·
+15% trap-flag F1 · 10% jurisdiction. Baselines are deterministic pipelines, shown for reference.</p>
+<div class="tbl"><table>
+<thead><tr><th>#</th><th>Solver</th><th>Composite</th><th>Valuation</th><th>Calibration</th><th>Exclusion</th><th>Flags</th><th>Jurisdiction</th><th>Median error</th><th>80% cover</th><th>Parse</th></tr></thead>
+<tbody><tr class="baseline"><td class="rk">01</td><td class="mdl"><code>baseline:rules</code><span class="kind">baseline</span></td><td class="num big">94.4</td><td class="num">92.8</td><td class="num">82.9</td><td class="num">100.0</td><td class="num">100.0</td><td class="num">100.0</td><td class="num">1.6%</td><td class="num">100%</td><td class="num">100%</td></tr><tr class="baseline"><td class="rk">02</td><td class="mdl"><code>baseline:naive</code><span class="kind">baseline</span></td><td class="num big">47.1</td><td class="num">88.7</td><td class="num">66.3</td><td class="num">4.5</td><td class="num">0.0</td><td class="num">61.0</td><td class="num">2.3%</td><td class="num">100%</td><td class="num">100%</td></tr></tbody></table></div>
+
+<h2>Failure map</h2>
+<p>Share of items where each trap was correctly handled. This is the part that matters: not whether a model is good,
+but exactly where it breaks.</p>
+<div class="tbl"><table>
+<thead><tr><th>Solver</th><th>Implied-decimal price<small>n=79</small></th><th>Related-party sale<small>n=95</small></th><th>Multi-parcel sale<small>n=82</small></th><th>Keying outlier<small>n=97</small></th><th>Duplicate record<small>n=96</small></th><th>Cross-border comp<small>n=82</small></th><th>Jurisdiction inversion<small>n=78</small></th></tr></thead>
+<tbody><tr><td class="mdl"><code>baseline:rules</code></td><td class="st held" title="held"><span class="g" aria-hidden="true">●</span><span class="v">100%</span></td><td class="st held" title="held"><span class="g" aria-hidden="true">●</span><span class="v">100%</span></td><td class="st held" title="held"><span class="g" aria-hidden="true">●</span><span class="v">100%</span></td><td class="st held" title="held"><span class="g" aria-hidden="true">●</span><span class="v">100%</span></td><td class="st held" title="held"><span class="g" aria-hidden="true">●</span><span class="v">100%</span></td><td class="st held" title="held"><span class="g" aria-hidden="true">●</span><span class="v">100%</span></td><td class="st held" title="held"><span class="g" aria-hidden="true">●</span><span class="v">100%</span></td></tr><tr><td class="mdl"><code>baseline:naive</code></td><td class="st fail" title="failed"><span class="g" aria-hidden="true">○</span><span class="v">0%</span></td><td class="st fail" title="failed"><span class="g" aria-hidden="true">○</span><span class="v">0%</span></td><td class="st fail" title="failed"><span class="g" aria-hidden="true">○</span><span class="v">0%</span></td><td class="st fail" title="failed"><span class="g" aria-hidden="true">○</span><span class="v">0%</span></td><td class="st fail" title="failed"><span class="g" aria-hidden="true">○</span><span class="v">0%</span></td><td class="st fail" title="failed"><span class="g" aria-hidden="true">○</span><span class="v">0%</span></td><td class="st fail" title="failed"><span class="g" aria-hidden="true">○</span><span class="v">0%</span></td></tr></tbody></table></div>
+<div class="legend"><span>● held ≥80%</span><span>◐ partial 40–79%</span><span class="fail">○ failed &lt;40% (dashed)</span></div>
+
+<h2>Provenance</h2>
+<p>Every scored answer is a hash-chained receipt. Editing any past result breaks the chain. The holdout key is
+committed before any model is run and revealed afterward.</p>
+<div class="prov">
+  <div class="kv"><span>Dataset (holdout_hard) sha256</span><code>6b4ca933b4031929dbbdb3a5ea2cce03c39856546cf2fedfe8567046f04f7c31</code></div>
+  <div class="kv"><span>Ledger head</span><code class="b">65978587a3cd708bfccb163cafabf3dec06622d3a3c3cfbbb0204a29501a421c</code></div>
+  <div class="kv"><span>holdout key commitment</span><code>10b61139662a6efa535df434950c5b3f117c093110e37ed55e580763bf92b34c</code></div><div class="kv"><span>holdout_hard key commitment</span><code>5dca96aba3c2a7970e6c98b68ee0ea28e15edc17a755344341bbeec14eff96e9</code></div>
+  <div class="kv"><span>Generator</span><code>prbench 1.1.1</code></div>
+</div>
+<pre>python3 -m prbench verify     # recompute every hash + re-score every stored response</pre>
+
+<footer><b>NEURUH</b><span>Parcel Reality Bench</span></footer>
+</div>
+<script>
+(function(){var m=window.matchMedia&&window.matchMedia('(prefers-color-scheme: light)').matches;
+document.documentElement.dataset.spine=m?'bone':'obsidian';})();
+function toggle(){var r=document.documentElement;r.dataset.spine=r.dataset.spine==='bone'?'obsidian':'bone';}
+</script>
+</body>
+</html>

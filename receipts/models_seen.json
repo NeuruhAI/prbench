@@ -1,0 +1,112 @@
+{
+  "anthropic:claude-opus-5": {
+    "first_seen": "2026-09-22T12:37:12Z",
+    "benchmarked": false,
+    "pinned": true
+  },
+  "anthropic:claude-sonnet-5": {
+    "first_seen": "2026-09-22T12:37:12Z",
+    "benchmarked": false,
+    "pinned": true
+  },
+  "anthropic:claude-opus-4-8": {
+    "first_seen": "2026-09-22T12:37:12Z",
+    "benchmarked": true,
+    "skipped": "bootstrap"
+  },
+  "anthropic:claude-opus-4-7": {
+    "first_seen": "2026-09-22T12:37:12Z",
+    "benchmarked": true,
+    "skipped": "bootstrap"
+  },
+  "anthropic:claude-sonnet-4-6": {
+    "first_seen": "2026-09-22T12:37:12Z",
+    "benchmarked": true,
+    "skipped": "bootstrap"
+  },
+  "anthropic:claude-opus-4-6": {
+    "first_seen": "2026-09-22T12:37:12Z",
+    "benchmarked": true,
+    "skipped": "bootstrap"
+  },
+  "anthropic:claude-opus-4-5-20251101": {
+    "first_seen": "2026-09-22T12:37:12Z",
+    "benchmarked": true,
+    "skipped": "bootstrap"
+  },
+  "anthropic:claude-haiku-4-5-20251001": {
+    "first_seen": "2026-09-22T12:37:12Z",
+    "benchmarked": false,
+    "pinned": true
+  },
+  "anthropic:claude-sonnet-4-5-20250929": {
+    "first_seen": "2026-09-22T12:37:12Z",
+    "benchmarked": true,
+    "skipped": "bootstrap"
+  },
+  "gemini:gemini-2.5-flash": {
+    "first_seen": "2026-09-22T12:37:12Z",
+    "benchmarked": true,
+    "skipped": "bootstrap"
+  },
+  "gemini:gemini-2.5-pro": {
+    "first_seen": "2026-09-22T12:37:12Z",
+    "benchmarked": true,
+    "skipped": "bootstrap"
+  },
+  "gemini:gemini-flash-latest": {
+    "first_seen": "2026-09-22T12:37:12Z",
+    "benchmarked": true,
+    "skipped": "bootstrap"
+  },
+  "gemini:gemini-pro-latest": {
+    "first_seen": "2026-09-22T12:37:12Z",
+    "benchmarked": true,
+    "skipped": "bootstrap"
+  },
+  "gemini:gemini-3-flash-preview": {
+    "first_seen": "2026-09-22T12:37:12Z",
+    "benchmarked": true,
+    "skipped": "bootstrap"
+  },
+  "gemini:gemini-3.1-pro-preview": {
+    "first_seen": "2026-09-22T12:37:12Z",
+    "benchmarked": true,
+    "skipped": "bootstrap"
+  },
+  "gemini:gemini-3.1-pro-preview-customtools": {
+    "first_seen": "2026-09-22T12:37:12Z",
+    "benchmarked": true,
+    "skipped": "bootstrap"
+  },
+  "gemini:gemini-3.5-flash": {
+    "first_seen": "2026-09-22T12:37:12Z",
+    "benchmarked": true,
+    "skipped": "bootstrap"
+  },
+  "gemini:gemini-omni-flash-preview": {
+    "first_seen": "2026-09-22T12:37:12Z",
+    "benchmarked": true,
+    "skipped": "bootstrap"
+  },
+  "gemini:gemini-omni-1.1-flash": {
+    "first_seen": "2026-09-22T12:37:12Z",
+    "benchmarked": true,
+    "skipped": "bootstrap"
+  },
+  "gemini:gemini-3.6-flash": {
+    "first_seen": "2026-09-22T12:37:12Z",
+    "benchmarked": true,
+    "skipped": "bootstrap"
+  },
+  "gemini:gemini-3.7-flash": {
+    "first_seen": "2026-09-22T12:37:12Z",
+    "benchmarked": true,
+    "skipped": "bootstrap"
+  },
+  "gemini:gemini-3.8-flash": {
+    "first_seen": "2026-09-22T12:37:12Z",
+    "benchmarked": true,
+    "skipped": "bootstrap"
+  }
+}

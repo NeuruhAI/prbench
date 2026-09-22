@@ -1,0 +1,17 @@
+{
+  "split": "holdout_hard",
+  "n": 200,
+  "difficulty": "hard",
+  "generator_version": "1.1.1",
+  "items_sha256": "6b4ca933b4031929dbbdb3a5ea2cce03c39856546cf2fedfe8567046f04f7c31",
+  "key_sha256": "6e5df01e93302648bcc2c26d423df2427c215fd40e8f944062b266d3c12be9d7",
+  "trap_counts": {
+    "price_scale": 79,
+    "non_arms_length": 95,
+    "multi_parcel_sale": 82,
+    "outlier": 97,
+    "duplicate_record": 96,
+    "cross_jurisdiction_comp": 82,
+    "jurisdiction_mismatch": 78
+  }
+}

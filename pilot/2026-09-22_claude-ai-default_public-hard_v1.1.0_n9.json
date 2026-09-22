@@ -1,0 +1,353 @@
+{
+ "run_id": "live-20260922T113837-default",
+ "solver": "claude.ai:default",
+ "split": "public_hard",
+ "items_sha256": "a51b4158b0ca6ab97ecf0c6d9e9344c3e04cdb2db7c21e3237a5100e73d4821e",
+ "summary": {
+  "valuation": 0.8748481563476322,
+  "calibration": 0.7277151161938044,
+  "exclusion": 0.8296296296296296,
+  "flags": 0.8287477954144621,
+  "jurisdiction": 0.8888888888888888,
+  "composite": 0.8286059357515161,
+  "parse_rate": 1,
+  "coverage_80": 1,
+  "median_ape": 0.029411764705882353,
+  "n": 9,
+  "traps": {
+   "price_scale": {
+    "n": 6,
+    "handled_rate": 1
+   },
+   "non_arms_length": {
+    "n": 5,
+    "handled_rate": 1
+   },
+   "multi_parcel_sale": {
+    "n": 5,
+    "handled_rate": 1
+   },
+   "outlier": {
+    "n": 5,
+    "handled_rate": 1
+   },
+   "duplicate_record": {
+    "n": 1,
+    "handled_rate": 1
+   },
+   "cross_jurisdiction_comp": {
+    "n": 4,
+    "handled_rate": 0.75
+   },
+   "jurisdiction_mismatch": {
+    "n": 5,
+    "handled_rate": 0.8
+   }
+  }
+ },
+ "items": [
+  {
+   "id": "PRX-0001",
+   "response": "{\"estimate_usd\": 379000, \"p10_usd\": 363000, \"p90_usd\": 397000, \"jurisdiction\": {\"state\": \"MI\", \"county\": \"Berrien\"}, \"excluded_comps\": [\"C02\", \"C04\", \"C05\", \"C06\", \"C09\", \"C10\"], \"flags\": [\"price_scale\", \"non_arms_length\", \"multi_parcel_sale\", \"cross_jurisdiction_comp\", \"outlier\"], \"rationale\": \"Used arms-length WD/SW sales of similar-vintage single-family homes in Berrien County MI (C01 corrected for a cents-scale price error, C03, C07, C08, C11), excluding a quit-claim family transfer, a bulk multi-parcel sale bundle, an out-of-state (Indiana) comp, and a clear price outlier, then applied the resulting ~$154-164/sqft range to the subject's 2,417 sqft.\"}",
+   "scores": {
+    "valuation": 0.9852786540483701,
+    "calibration": 0.8510339992989835,
+    "exclusion": 1,
+    "flags": 1,
+    "jurisdiction": 1,
+    "composite": 0.9657903960743077,
+    "parse_ok": true,
+    "ape": 0.003680336487907466,
+    "covered": true,
+    "handled": {
+     "cross_jurisdiction_comp": true,
+     "multi_parcel_sale": true,
+     "non_arms_length": true,
+     "outlier": true,
+     "price_scale": true
+    }
+   }
+  },
+  {
+   "id": "PRX-0002",
+   "response": "{\"estimate_usd\": 290000, \"p10_usd\": 250000, \"p90_usd\": 315000, \"jurisdiction\": {\"state\": \"IN\", \"county\": \"La Porte\"}, \"excluded_comps\": [\"C03\", \"C04\"], \"flags\": [\"price_scale\", \"non_arms_length\", \"outlier\", \"cross_jurisdiction_comp\"], \"rationale\": \"Value derived from price-per-square-foot of arms-length comps (excluding an extreme outlier and a same-family sale) applied to subject's 1,928 sqft, using the one in-jurisdiction (La Porte County, IN) sale plus nearby Berrien County, MI comps flagged as cross-jurisdiction, with C06's raw SDF price rescaled from cents.\"}",
+   "scores": {
+    "valuation": 0.8939241356159785,
+    "calibration": 0.6363432919324158,
+    "exclusion": 0.8,
+    "flags": 0.888888888888889,
+    "jurisdiction": 0,
+    "composite": 0.7287792324046101,
+    "parse_ok": true,
+    "ape": 0.026518966096005372,
+    "covered": true,
+    "handled": {
+     "cross_jurisdiction_comp": false,
+     "jurisdiction_mismatch": false,
+     "non_arms_length": true,
+     "outlier": true,
+     "price_scale": true
+    }
+   }
+  },
+  {
+   "id": "PRX-0003",
+   "response": "{\"estimate_usd\": 231500, \"p10_usd\": 210000, \"p90_usd\": 250000, \"jurisdiction\": {\"state\": \"IN\", \"county\": \"St. Joseph County\"}, \"excluded_comps\": [\"C04\", \"C06\"], \"flags\": [\"duplicate_record\", \"non_arms_length\", \"price_scale\", \"jurisdiction_mismatch\"], \"rationale\": \"Subject's parcel numbering matches the St. Joseph County, IN comp set despite a Michigan mailing address, so value was derived from adjusted price-per-square-foot of C01, C02, C03 (rescaled), C05, and C07 after excluding the duplicate DOC-488092 record and the below-market family transfer C04.\"}",
+   "scores": {
+    "valuation": 0.8231844835363104,
+    "calibration": 0.6992933393474665,
+    "exclusion": 1,
+    "flags": 1,
+    "jurisdiction": 1,
+    "composite": 0.8868140129303864,
+    "parse_ok": true,
+    "ape": 0.04420387911592242,
+    "covered": true,
+    "handled": {
+     "duplicate_record": true,
+     "jurisdiction_mismatch": true,
+     "non_arms_length": true,
+     "price_scale": true
+    }
+   }
+  },
+  {
+   "id": "PRX-0004",
+   "response": "{\"estimate_usd\": 185000, \"p10_usd\": 170000, \"p90_usd\": 198000, \"jurisdiction\": {\"state\": \"MI\", \"county\": \"Cass\"}, \"excluded_comps\": [\"C01\", \"C02\", \"C06\", \"C09\"], \"flags\": [\"multi_parcel_sale\", \"duplicate_record\", \"outlier\", \"price_scale\"], \"rationale\": \"Excluded the C01/C06/C09 group (same sale_id, shared price across multiple parcels with zero sqft) and the anomalous C02 outlier, corrected C08's raw SDF price scaling, and derived value from the five consistent Cass County comps' price-per-square-foot applied to the subject's 1,776 sqft.\"}",
+   "scores": {
+    "valuation": 0.785876993166287,
+    "calibration": 0.7342444950645406,
+    "exclusion": 1,
+    "flags": 0.8571428571428571,
+    "jurisdiction": 1,
+    "composite": 0.8611834255342228,
+    "parse_ok": true,
+    "ape": 0.05353075170842825,
+    "covered": true,
+    "handled": {
+     "multi_parcel_sale": true,
+     "outlier": true,
+     "price_scale": true
+    }
+   }
+  },
+  {
+   "id": "PRX-0005",
+   "response": "{\"estimate_usd\": 284000, \"p10_usd\": 260000, \"p90_usd\": 308000, \"jurisdiction\": {\"state\": \"IN\", \"county\": \"St. Joseph\"}, \"excluded_comps\": [\"C06\"], \"flags\": [\"non_arms_length\", \"jurisdiction_mismatch\"], \"rationale\": \"Subject's parcel prefix and comp set indicate St. Joseph County, Indiana despite a Michigan mailing address, and C06 was excluded for apparent same-family (non-arms-length) grantor/grantee naming, leaving C01-C05 to derive a price-per-square-foot estimate applied to the subject's 2,324 sqft.\"}",
+   "scores": {
+    "valuation": 0.9601706970128023,
+    "calibration": 0.7155049786628733,
+    "exclusion": 0,
+    "flags": 0.6666666666666666,
+    "jurisdiction": 1,
+    "composite": 0.6311522048364153,
+    "parse_ok": true,
+    "ape": 0.00995732574679943,
+    "covered": true,
+    "handled": {
+     "jurisdiction_mismatch": true
+    }
+   }
+  },
+  {
+   "id": "PRX-0006",
+   "response": "{\"estimate_usd\": 159300, \"p10_usd\": 146000, \"p90_usd\": 173000, \"jurisdiction\": {\"state\": \"IN\", \"county\": \"St. Joseph\"}, \"excluded_comps\": [\"C02\", \"C04\"], \"flags\": [\"non_arms_length\", \"outlier\", \"price_scale\"], \"rationale\": \"Excluded C04 as a clear price-scale outlier and C02 as a likely non-arms-length transfer, then applied the average price-per-square-foot (~$118) from the remaining four comparable sales to the subject's 1,350 sqft.\"}",
+   "scores": {
+    "valuation": 0.7773359840954275,
+    "calibration": 0.7017892644135189,
+    "exclusion": 0.6666666666666666,
+    "flags": 0.5,
+    "jurisdiction": 1,
+    "composite": 0.7152253147779986,
+    "parse_ok": true,
+    "ape": 0.055666003976143144,
+    "covered": true,
+    "handled": {
+     "outlier": true
+    }
+   }
+  },
+  {
+   "id": "PRX-0007",
+   "response": "{\"estimate_usd\": 179500, \"p10_usd\": 160000, \"p90_usd\": 200000, \"jurisdiction\": {\"state\": \"IN\", \"county\": \"St. Joseph\"}, \"excluded_comps\": [\"C01\",\"C04\",\"C05\",\"C09\"], \"flags\": [\"duplicate_record\",\"multi_parcel_sale\",\"outlier\",\"jurisdiction_mismatch\"], \"rationale\": \"Excluding the triplicate same-sale-ID records (likely a bundled multi-parcel transaction) and the extreme outlier C09, the remaining six St. Joseph County, IN comps average about $96/sqft, applied to the subject's 1,866 sqft despite its Michigan mailing address indicating a likely jurisdiction mismatch.\"}",
+   "scores": {
+    "valuation": 0.7789473684210526,
+    "calibration": 0.6491228070175439,
+    "exclusion": 1,
+    "flags": 0.8571428571428571,
+    "jurisdiction": 1,
+    "composite": 0.8420802005012531,
+    "parse_ok": true,
+    "ape": 0.05526315789473684,
+    "covered": true,
+    "handled": {
+     "jurisdiction_mismatch": true,
+     "multi_parcel_sale": true,
+     "outlier": true
+    }
+   }
+  },
+  {
+   "id": "PRX-0008",
+   "response": "{\"estimate_usd\": 178000, \"p10_usd\": 165000, \"p90_usd\": 192000, \"jurisdiction\": {\"state\": \"IN\", \"county\": \"Porter\"}, \"excluded_comps\": [\"C01\", \"C02\", \"C03\", \"C05\", \"C10\"], \"flags\": [\"multi_parcel_sale\", \"price_scale\", \"non_arms_length\", \"cross_jurisdiction_comp\"], \"rationale\": \"Subject's parcel numbering matches Porter County, IN (the '64-' prefix shared by comps in Chesterton/Valparaiso/Portage/Kouts) despite a New Buffalo, MI mailing address, so valuation used arm's-length, single-parcel Porter County sales (C04, C06, C07, C08, C09 with corrected price, C11) scaled to price-per-sqft (~$161/sqft) applied to the subject's 1,101 sqft, while excluding a bundled multi-parcel sale (C01/C02/C05), an out-of-state comp (C03), and an apparent related-party low-price transfer (C10).\"}",
+   "scores": {
+    "valuation": 0.986562150055991,
+    "calibration": 0.748040313549832,
+    "exclusion": 1,
+    "flags": 0.888888888888889,
+    "jurisdiction": 1,
+    "composite": 0.928910041060097,
+    "parse_ok": true,
+    "ape": 0.0033594624860022394,
+    "covered": true,
+    "handled": {
+     "cross_jurisdiction_comp": true,
+     "jurisdiction_mismatch": true,
+     "multi_parcel_sale": true,
+     "non_arms_length": true,
+     "price_scale": true
+    }
+   }
+  },
+  {
+   "id": "PRX-0009",
+   "response": "{\"estimate_usd\": 203000, \"p10_usd\": 193000, \"p90_usd\": 215000, \"jurisdiction\": {\"state\": \"IN\", \"county\": \"St. Joseph\"}, \"excluded_comps\": [\"C03\", \"C06\", \"C07\", \"C08\", \"C09\"], \"flags\": [\"price_scale\", \"non_arms_length\", \"multi_parcel_sale\", \"duplicate_record\", \"cross_jurisdiction_comp\", \"outlier\"], \"rationale\": \"Used five arm's-length St. Joseph County, IN sales (C01, C02 with SDF price rescaled, C04, C05, C10) after excluding a bundled multi-parcel sale trio, a Michigan cross-jurisdiction comp, and a self-transfer outlier, applying the resulting ~$114/sqft average to the subject's 1,777 sqft.\"}",
+   "scores": {
+    "valuation": 0.8823529411764706,
+    "calibration": 0.8140635564570655,
+    "exclusion": 1,
+    "flags": 0.8,
+    "jurisdiction": 1,
+    "composite": 0.8975185936443543,
+    "parse_ok": true,
+    "ape": 0.029411764705882353,
+    "covered": true,
+    "handled": {
+     "cross_jurisdiction_comp": true,
+     "multi_parcel_sale": true,
+     "non_arms_length": true,
+     "price_scale": true
+    }
+   }
+  }
+ ],
+ "receipts": [
+  {
+   "seq": 1,
+   "ts": "2026-09-22T11:39:00Z",
+   "prev": "0000000000000000000000000000000000000000000000000000000000000000",
+   "type": "score",
+   "run_id": "live-20260922T113837-default",
+   "solver": "claude.ai:default",
+   "item": "PRX-0001",
+   "prompt_sha256": "9b72944c39ee93a7a0c3a4df641ac2e6eeb58ea063ad5eedd071b9b08d1ddb98",
+   "response_sha256": "363844a8b9f704f54da1c6df38898bc992fd9e989cc59a6854bc5414ca684ed7",
+   "composite": 0.96579,
+   "hash": "a9c92003b3a4813eec42197c9cf5cd5665de83ccab857b9efd5a666d62da4249"
+  },
+  {
+   "seq": 2,
+   "ts": "2026-09-22T11:39:19Z",
+   "prev": "a9c92003b3a4813eec42197c9cf5cd5665de83ccab857b9efd5a666d62da4249",
+   "type": "score",
+   "run_id": "live-20260922T113837-default",
+   "solver": "claude.ai:default",
+   "item": "PRX-0002",
+   "prompt_sha256": "7e5d51f93acf882127c9ac83dc077943280bb64fcd45d73f981028a87939b518",
+   "response_sha256": "b56ab8bcf9488d905abaf9310029185f08c6c1d7b85671ec99da3ca6bf10e4e4",
+   "composite": 0.728779,
+   "hash": "857d2b52937350c91026726b2fe585dcd4e81eb116298d27852abf9ce24028ac"
+  },
+  {
+   "seq": 3,
+   "ts": "2026-09-22T11:39:34Z",
+   "prev": "857d2b52937350c91026726b2fe585dcd4e81eb116298d27852abf9ce24028ac",
+   "type": "score",
+   "run_id": "live-20260922T113837-default",
+   "solver": "claude.ai:default",
+   "item": "PRX-0003",
+   "prompt_sha256": "25c516ee1f2b878197d77c49a774b1361997d6cad63427d6030b109ba8a9cf36",
+   "response_sha256": "a3c78fdb49e88eb2479fe9dc767a3155bc306d1613056ded142b1fca889b94ff",
+   "composite": 0.886814,
+   "hash": "7d45eb965002a231f9c26ed13360a1d3c60cef91d871e1370d820dfcd7f52e1f"
+  },
+  {
+   "seq": 4,
+   "ts": "2026-09-22T11:39:50Z",
+   "prev": "7d45eb965002a231f9c26ed13360a1d3c60cef91d871e1370d820dfcd7f52e1f",
+   "type": "score",
+   "run_id": "live-20260922T113837-default",
+   "solver": "claude.ai:default",
+   "item": "PRX-0004",
+   "prompt_sha256": "ac0bc33d812bfc3a3d6e6c96d99ab442f00d0c3b27997be2f77fed08c13c54c2",
+   "response_sha256": "427ba051e2cb51818a84ac8bf6162243027f713ba52a55d60ccc1f93c6f8f5e8",
+   "composite": 0.861183,
+   "hash": "683f86aa9de6e1ce67540098630dbefaaa1fcaf16c778779badd7df74693c3d9"
+  },
+  {
+   "seq": 5,
+   "ts": "2026-09-22T11:40:17Z",
+   "prev": "683f86aa9de6e1ce67540098630dbefaaa1fcaf16c778779badd7df74693c3d9",
+   "type": "score",
+   "run_id": "live-20260922T113837-default",
+   "solver": "claude.ai:default",
+   "item": "PRX-0005",
+   "prompt_sha256": "8506b37de3121a05619d0b665c9318ced857f3eff3e6435596cf360cb34d4dfa",
+   "response_sha256": "a299ce36e8b08db119bb02f3c689ed38b01b4c5004887f76f2e015dfcab6c29e",
+   "composite": 0.631152,
+   "hash": "5fa808ea38765a6356df442a120b5bc02b50ee105072e31b3a294ac483f54814"
+  },
+  {
+   "seq": 6,
+   "ts": "2026-09-22T11:40:31Z",
+   "prev": "5fa808ea38765a6356df442a120b5bc02b50ee105072e31b3a294ac483f54814",
+   "type": "score",
+   "run_id": "live-20260922T113837-default",
+   "solver": "claude.ai:default",
+   "item": "PRX-0006",
+   "prompt_sha256": "606d28291154621d8830532a2a407597d6ed050c8fcd5e68b01f9a2ca55651ed",
+   "response_sha256": "db1bf454a60ad5b64e5406d417d9548a8466c6532b60d5ca6d0424a4ec62bc21",
+   "composite": 0.715225,
+   "hash": "ec30c3bf81d315b28ca971c5ab42b58f02a488f4024f1bdc9606dad018a6dc17"
+  },
+  {
+   "seq": 7,
+   "ts": "2026-09-22T11:40:47Z",
+   "prev": "ec30c3bf81d315b28ca971c5ab42b58f02a488f4024f1bdc9606dad018a6dc17",
+   "type": "score",
+   "run_id": "live-20260922T113837-default",
+   "solver": "claude.ai:default",
+   "item": "PRX-0007",
+   "prompt_sha256": "faba046cfdfb810690a6ccb1ddc721e8e28634a6904c29c91311bff7108dfde7",
+   "response_sha256": "aab65d4f8e35376d49fa0efd427db7f68e6f994e999b4bd41f414f2f3a84b424",
+   "composite": 0.84208,
+   "hash": "fbc23113c9c18ab31b6712ee04a275b70ac90bda8431bc2aa98931d7bb680f21"
+  },
+  {
+   "seq": 8,
+   "ts": "2026-09-22T11:41:18Z",
+   "prev": "fbc23113c9c18ab31b6712ee04a275b70ac90bda8431bc2aa98931d7bb680f21",
+   "type": "score",
+   "run_id": "live-20260922T113837-default",
+   "solver": "claude.ai:default",
+   "item": "PRX-0008",
+   "prompt_sha256": "ef3e7441075b0df46d2de1f0ab113586fb50b0db01dbf443a5bd5474131aa024",
+   "response_sha256": "db628681e22e57fab6baf222c41f249cd4ebf03d58c984d28999ed409df4cca0",
+   "composite": 0.92891,
+   "hash": "07d9f42fa2d528bec3dc0e2f2516b63d1e962846ddde83f2d5ae4faef11718ff"
+  },
+  {
+   "seq": 9,
+   "ts": "2026-09-22T11:41:44Z",
+   "prev": "07d9f42fa2d528bec3dc0e2f2516b63d1e962846ddde83f2d5ae4faef11718ff",
+   "type": "score",
+   "run_id": "live-20260922T113837-default",
+   "solver": "claude.ai:default",
+   "item": "PRX-0009",
+   "prompt_sha256": "01b0eedbf75a5724084905ae7f711496d85c44e78e6e664951fd299a1a0dde77",
+   "response_sha256": "eb92089dd02dc188f78c055bacc25a43bb57eb865ca96669ac5e1da560c2f729",
+   "composite": 0.897519,
+   "hash": "c951d4161a5fc77c397369d4dac2bca239bcffde332eac434ce717212f236222"
+  }
+ ]
+}

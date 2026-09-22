@@ -1,0 +1,7 @@
+data/holdout/key.jsonl
+data/holdout_hard/key.jsonl
+__pycache__/
+*.pyc
+.env
+*.salt
+salt.txt
