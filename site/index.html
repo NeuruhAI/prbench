@@ -76,7 +76,7 @@ footer b{color:var(--ink);font-family:var(--font-d);letter-spacing:.2em}
     <nav class="tiers"><a href="index.html" aria-current=page>Hard</a><a href="public.html">Standard</a><a href="holdout_hard.html">Holdout · Hard</a></nav>
     <div class="eyebrow">Neuruh · Evaluation · public_hard split</div>
     <h1>Parcel Reality<br><em>Bench</em></h1>
-    <p class="lede">Frontier models versus <b>as-received county records</b> on the Indiana–Michigan line.
+    <p class="lede">Frontier models versus <b>synthetic parcel packets built in real county file formats</b> from the Indiana–Michigan line.
     Implied-decimal price layouts, related-party transfers, multi-parcel sales, keying errors, duplicates,
     cross-border comps, and jurisdiction inversions. A human records analyst catches these in seconds.
     This measures whether a model does, and whether its confidence interval is honest.</p>
@@ -94,6 +94,11 @@ footer b{color:var(--ink);font-family:var(--font-d);letter-spacing:.2em}
 <h2>Leaderboard</h2>
 <p>Composite = 30% valuation accuracy · 20% interval calibration (Winkler, 80%) · 25% invalid-comp exclusion F1 ·
 15% trap-flag F1 · 10% jurisdiction. Baselines are deterministic pipelines, shown for reference.</p>
+<p><b>Method &amp; limits.</b> Items are procedurally generated, not real transactions, so answers cannot have been
+memorized; the holdout tiers are sealed by published commitment. The rules baseline was written by the benchmark
+author with knowledge of the seven trap classes: treat it as an informed-specialist reference, not a neutral competitor.
+Rows labeled <code>claude.ai:&lt;tier&gt;</code> were run through the consumer Claude app at that tier, so the exact model
+version is not pinned; API rows name their model. Scores on the public tiers are over 60 items per solver.</p>
 <div class="tbl"><table>
 <thead><tr><th>#</th><th>Solver</th><th>Composite</th><th>Valuation</th><th>Calibration</th><th>Exclusion</th><th>Flags</th><th>Jurisdiction</th><th>Median error</th><th>80% cover</th><th>Parse</th></tr></thead>
 <tbody><tr class="baseline"><td class="rk">01</td><td class="mdl"><code>baseline:rules</code><span class="kind">baseline</span></td><td class="num big">94.5</td><td class="num">92.9</td><td class="num">82.8</td><td class="num">100.0</td><td class="num">100.0</td><td class="num">100.0</td><td class="num">1.5%</td><td class="num">100%</td><td class="num">100%</td></tr><tr class="model"><td class="rk">02</td><td class="mdl"><code>claude.ai:default</code><span class="kind">model</span></td><td class="num big">88.8</td><td class="num">90.8</td><td class="num">72.2</td><td class="num">97.3</td><td class="num">89.8</td><td class="num">93.3</td><td class="num">1.8%</td><td class="num">97%</td><td class="num">100%</td></tr><tr class="baseline"><td class="rk">03</td><td class="mdl"><code>baseline:naive</code><span class="kind">baseline</span></td><td class="num big">45.7</td><td class="num">87.3</td><td class="num">66.0</td><td class="num">0.0</td><td class="num">0.0</td><td class="num">63.3</td><td class="num">2.6%</td><td class="num">98%</td><td class="num">100%</td></tr></tbody></table></div>
