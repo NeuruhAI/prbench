@@ -56,7 +56,7 @@
     "public",
     "holdout_hard"
   ],
-  "max_new_models_per_run": 4,
+  "max_new_models_per_run": 0,
   "sleep_seconds": 1,
   "saturation_threshold": 0.95
 }

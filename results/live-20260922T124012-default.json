@@ -1,0 +1,666 @@
+{
+ "run_id": "live-20260922T124012-default",
+ "solver": "claude.ai:default",
+ "split": "public_hard",
+ "items_sha256": "2d1994dd8f21e51b5ed8f137b59242e1aaa489a86cfb294444518a8cd5c2eab6",
+ "summary": {
+  "valuation": 0.8950376121277915,
+  "calibration": 0.7059536471039732,
+  "exclusion": 0.9562962962962963,
+  "flags": 0.8945502645502645,
+  "jurisdiction": 0.9333333333333333,
+  "composite": 0.8762919601490792,
+  "parse_rate": 1.0,
+  "coverage_80": 0.9333333333333333,
+  "median_ape": 0.022230595327807082,
+  "n": 30,
+  "traps": {
+   "price_scale": {
+    "n": 15,
+    "handled_rate": 0.8666666666666667
+   },
+   "non_arms_length": {
+    "n": 17,
+    "handled_rate": 1.0
+   },
+   "multi_parcel_sale": {
+    "n": 17,
+    "handled_rate": 1.0
+   },
+   "outlier": {
+    "n": 20,
+    "handled_rate": 1.0
+   },
+   "duplicate_record": {
+    "n": 13,
+    "handled_rate": 1.0
+   },
+   "cross_jurisdiction_comp": {
+    "n": 14,
+    "handled_rate": 0.8571428571428571
+   },
+   "jurisdiction_mismatch": {
+    "n": 10,
+    "handled_rate": 0.8
+   }
+  }
+ },
+ "items": [
+  {
+   "id": "PRX-0001",
+   "response": "{\"estimate_usd\": 376900, \"p10_usd\": 350000, \"p90_usd\": 405000, \"jurisdiction\": {\"state\": \"MI\", \"county\": \"Berrien\"}, \"excluded_comps\": [\"C01\", \"C02\", \"C07\", \"C08\", \"C10\", \"C11\"], \"flags\": [\"price_scale\", \"multi_parcel_sale\", \"outlier\", \"cross_jurisdiction_comp\"], \"rationale\": \"Used valid Berrien County MI comps (C03,C04,C05,C06,C09 with SDF price rescaled) after excluding multi-parcel package sales, a mis-scaled/outlier price, an inconsistent low-price comp, and an out-of-state (Indiana) comp, applying the resulting ~$156/sqft to the subject's 2,417 sqft.\"}",
+   "scores": {
+    "valuation": 0.9631966351209253,
+    "calibration": 0.7590255871012969,
+    "exclusion": 1.0,
+    "flags": 0.888888888888889,
+    "jurisdiction": 1.0,
+    "composite": 0.9240974412898704,
+    "parse_ok": true,
+    "ape": 0.009200841219768665,
+    "covered": true,
+    "handled": {
+     "cross_jurisdiction_comp": true,
+     "multi_parcel_sale": true,
+     "non_arms_length": true,
+     "outlier": true,
+     "price_scale": true
+    }
+   }
+  },
+  {
+   "id": "PRX-0002",
+   "response": "{\"estimate_usd\": 226000, \"p10_usd\": 215000, \"p90_usd\": 238000, \"jurisdiction\": {\"state\": \"IN\", \"county\": \"LaPorte\"}, \"excluded_comps\": [\"C01\", \"C02\", \"C06\", \"C07\"], \"flags\": [\"price_scale\", \"non_arms_length\", \"duplicate_record\", \"cross_jurisdiction_comp\", \"outlier\"], \"rationale\": \"Excluded an out-of-state comp, a non-arm's-length quitclaim sale, a duplicate record, and a clear price outlier, then applied per-sqft pricing from the remaining five La Porte/Michiana-area comps (correcting C03's cents-formatted SDF price) to the subject's 1,744 sqft.\"}",
+   "scores": {
+    "valuation": 0.9270199826238054,
+    "calibration": 0.8334781349551115,
+    "exclusion": 1.0,
+    "flags": 1.0,
+    "jurisdiction": 1.0,
+    "composite": 0.9448016217781638,
+    "parse_ok": true,
+    "ape": 0.018245004344048653,
+    "covered": true,
+    "handled": {
+     "cross_jurisdiction_comp": true,
+     "duplicate_record": true,
+     "non_arms_length": true,
+     "outlier": true,
+     "price_scale": true
+    }
+   }
+  },
+  {
+   "id": "PRX-0003",
+   "response": "{\"estimate_usd\": 282000, \"p10_usd\": 255000, \"p90_usd\": 305000, \"jurisdiction\": {\"state\": \"MI\", \"county\": \"Berrien\"}, \"excluded_comps\": [\"C02\", \"C05\", \"C06\", \"C07\", \"C08\", \"C10\"], \"flags\": [\"cross_jurisdiction_comp\", \"multi_parcel_sale\", \"duplicate_record\", \"outlier\"], \"rationale\": \"Used five arm's-length Berrien County MI single-parcel comps (C01, C03, C04, C09, C11) scaled by price per square foot to value the subject, excluding an Indiana comp, a $2.7M outlier sale, a duplicated record, and a multi-parcel transaction with invalid sqft entries.\"}",
+   "scores": {
+    "valuation": 0.8590308370044053,
+    "calibration": 0.6940773372491433,
+    "exclusion": 1.0,
+    "flags": 1.0,
+    "jurisdiction": 1.0,
+    "composite": 0.8965247185511502,
+    "parse_ok": true,
+    "ape": 0.03524229074889868,
+    "covered": true,
+    "handled": {
+     "cross_jurisdiction_comp": true,
+     "duplicate_record": true,
+     "multi_parcel_sale": true,
+     "outlier": true
+    }
+   }
+  },
+  {
+   "id": "PRX-0004",
+   "response": "{\"estimate_usd\": 144000, \"p10_usd\": 135000, \"p90_usd\": 155000, \"jurisdiction\": {\"state\": \"IN\", \"county\": \"LaPorte\"}, \"excluded_comps\": [\"C03\", \"C05\", \"C06\", \"C08\", \"C10\", \"C11\"], \"flags\": [\"price_scale\", \"non_arms_length\", \"multi_parcel_sale\", \"outlier\", \"cross_jurisdiction_comp\"], \"rationale\": \"Used six arms-length LaPorte County IN comparables with plausible price/sqft (~$107-121/sqft) after excluding a Michigan cross-jurisdiction sale, a family (non-arms-length) transfer, an obvious decimal/price-scale outlier, and a triplicated multi-parcel sale record lacking reliable per-parcel pricing, applying the resulting average $/sqft to the subject's 1,268 sqft.\"}",
+   "scores": {
+    "valuation": 0.9157036029911625,
+    "calibration": 0.7733967822343077,
+    "exclusion": 1.0,
+    "flags": 1.0,
+    "jurisdiction": 1.0,
+    "composite": 0.9293904373442103,
+    "parse_ok": true,
+    "ape": 0.02107409925220938,
+    "covered": true,
+    "handled": {
+     "cross_jurisdiction_comp": true,
+     "multi_parcel_sale": true,
+     "non_arms_length": true,
+     "outlier": true,
+     "price_scale": true
+    }
+   }
+  },
+  {
+   "id": "PRX-0005",
+   "response": "{\"estimate_usd\": 206700, \"p10_usd\": 193000, \"p90_usd\": 224000, \"jurisdiction\": {\"state\": \"IN\", \"county\": \"LaPorte\"}, \"excluded_comps\": [\"C02\", \"C03\", \"C04\"], \"flags\": [\"price_scale\", \"non_arms_length\", \"duplicate_record\", \"outlier\"], \"rationale\": \"Used six arms-length LaPorte County comps (adjusting C01's SDF raw price format) to derive a price-per-sqft estimate for the subject after excluding a duplicate record, a non-arms-length family transfer, and a mis-scaled outlier sale.\"}",
+   "scores": {
+    "valuation": 0.9049034175334324,
+    "calibration": 0.7440977381542018,
+    "exclusion": 1.0,
+    "flags": 1.0,
+    "jurisdiction": 1.0,
+    "composite": 0.92029057289087,
+    "parse_ok": true,
+    "ape": 0.0237741456166419,
+    "covered": true,
+    "handled": {
+     "duplicate_record": true,
+     "non_arms_length": true,
+     "outlier": true,
+     "price_scale": true
+    }
+   }
+  },
+  {
+   "id": "PRX-0006",
+   "response": "{\"estimate_usd\": 168800, \"p10_usd\": 151000, \"p90_usd\": 181000, \"jurisdiction\": {\"state\": \"IN\", \"county\": \"St. Joseph County\"}, \"excluded_comps\": [\"C02\", \"C03\", \"C05\", \"C06\", \"C08\"], \"flags\": [\"price_scale\", \"multi_parcel_sale\", \"duplicate_record\", \"outlier\", \"cross_jurisdiction_comp\"], \"rationale\": \"Subject's parcel numbering identifies it as St. Joseph County, Indiana, so the Edwardsburg MI comp was excluded as cross-jurisdiction, the three identical S-73190 records were treated as a bundled multi-parcel sale and excluded, C08's price was an extreme outlier, and C01's SDF_RAW price was rescaled from cents, leaving five comps averaging ~$105/sqft applied to the subject's 1,602 sqft.\"}",
+   "scores": {
+    "valuation": 0.9074074074074074,
+    "calibration": 0.7106481481481481,
+    "exclusion": 1.0,
+    "flags": 0.8000000000000002,
+    "jurisdiction": 1.0,
+    "composite": 0.8843518518518518,
+    "parse_ok": true,
+    "ape": 0.023148148148148147,
+    "covered": true,
+    "handled": {
+     "cross_jurisdiction_comp": true,
+     "jurisdiction_mismatch": true,
+     "multi_parcel_sale": true,
+     "outlier": true,
+     "price_scale": true
+    }
+   }
+  },
+  {
+   "id": "PRX-0007",
+   "response": "{\"estimate_usd\": 193600, \"p10_usd\": 181500, \"p90_usd\": 208000, \"jurisdiction\": {\"state\": \"MI\", \"county\": \"Cass\"}, \"excluded_comps\": [\"C01\",\"C07\",\"C08\",\"C09\",\"C10\"], \"flags\": [\"non_arms_length\",\"outlier\",\"multi_parcel_sale\",\"price_scale\"], \"rationale\": \"Valued via price-per-sqft from arm's-length, single-parcel Cass County comps (C02-C06 adjusted for cents-scale pricing, C11), excluding a self-transfer quit claim, a clear outlier price, and a bundled multi-parcel sale.\"}",
+   "scores": {
+    "valuation": 0.8836509528585758,
+    "calibration": 0.7785021731862254,
+    "exclusion": 1.0,
+    "flags": 1.0,
+    "jurisdiction": 1.0,
+    "composite": 0.9207957204948178,
+    "parse_ok": true,
+    "ape": 0.029087261785356068,
+    "covered": true,
+    "handled": {
+     "multi_parcel_sale": true,
+     "non_arms_length": true,
+     "outlier": true,
+     "price_scale": true
+    }
+   }
+  },
+  {
+   "id": "PRX-0008",
+   "response": "{\"estimate_usd\": 217000, \"p10_usd\": 180000, \"p90_usd\": 240000, \"jurisdiction\": {\"state\": \"IN\", \"county\": \"LaPorte\"}, \"excluded_comps\": [\"C01\", \"C06\", \"C07\", \"C09\"], \"flags\": [\"cross_jurisdiction_comp\", \"duplicate_record\", \"multi_parcel_sale\", \"outlier\"], \"rationale\": \"Valuation is based on the average price-per-square-foot of six valid comparable sales (excluding duplicate/multi-parcel records under sale_id S-81080 and the extreme outlier C06), applied to the subject's 1,808 sqft, with most comps flagged cross_jurisdiction_comp since only one true LaPorte County, IN sale (C05) was available.\"}",
+   "scores": {
+    "valuation": 0.996309963099631,
+    "calibration": 0.5387453874538745,
+    "exclusion": 0.888888888888889,
+    "flags": 0.75,
+    "jurisdiction": 0.0,
+    "composite": 0.7413642886428864,
+    "parse_ok": true,
+    "ape": 0.0009225092250922509,
+    "covered": true,
+    "handled": {
+     "cross_jurisdiction_comp": false,
+     "jurisdiction_mismatch": false,
+     "multi_parcel_sale": true,
+     "outlier": true
+    }
+   }
+  },
+  {
+   "id": "PRX-0009",
+   "response": "{\"estimate_usd\": 194000, \"p10_usd\": 185000, \"p90_usd\": 201000, \"jurisdiction\": {\"state\": \"MI\", \"county\": \"Cass\"}, \"excluded_comps\": [\"C02\", \"C05\", \"C06\", \"C09\"], \"flags\": [\"duplicate_record\", \"multi_parcel_sale\", \"price_scale\"], \"rationale\": \"Excluded a duplicate record (C06) and three co-sold parcels sharing one aggregate sale price and ID (C02/C05/C09), corrected a malformed padded price on C04, then applied the average $/sqft of the five remaining verified single-parcel Cass County, MI sales to the subject's 1,854 sqft.\"}",
+   "scores": {
+    "valuation": 0.9612046962736089,
+    "calibration": 0.863876127275821,
+    "exclusion": 1.0,
+    "flags": 1.0,
+    "jurisdiction": 1.0,
+    "composite": 0.9611366343372469,
+    "parse_ok": true,
+    "ape": 0.009698825931597753,
+    "covered": true,
+    "handled": {
+     "duplicate_record": true,
+     "multi_parcel_sale": true,
+     "price_scale": true
+    }
+   }
+  },
+  {
+   "id": "PRX-0010",
+   "response": "{\"estimate_usd\": 258000, \"p10_usd\": 235000, \"p90_usd\": 280000, \"jurisdiction\": {\"state\": \"MI\", \"county\": \"Berrien\"}, \"excluded_comps\": [\"C02\", \"C06\", \"C07\"], \"flags\": [\"jurisdiction_mismatch\", \"cross_jurisdiction_comp\", \"duplicate_record\", \"outlier\"], \"rationale\": \"Subject parcel numbering matches Berrien County, MI comps (despite a Michigan City, IN mailing address), so value was derived from six valid Berrien County sales after excluding a La Porte, IN cross-jurisdiction comp, a duplicate record, and a $3.05M outlier.\"}",
+   "scores": {
+    "valuation": 0.9646561659623512,
+    "calibration": 0.7118709181713407,
+    "exclusion": 1.0,
+    "flags": 1.0,
+    "jurisdiction": 1.0,
+    "composite": 0.9317710334229735,
+    "parse_ok": true,
+    "ape": 0.008835958509412217,
+    "covered": true,
+    "handled": {
+     "cross_jurisdiction_comp": true,
+     "duplicate_record": true,
+     "jurisdiction_mismatch": true,
+     "outlier": true
+    }
+   }
+  },
+  {
+   "id": "PRX-0011",
+   "response": "{\"estimate_usd\": 181000, \"p10_usd\": 167000, \"p90_usd\": 192000, \"jurisdiction\": {\"state\": \"IN\", \"county\": \"St. Joseph\"}, \"excluded_comps\": [\"C03\", \"C05\", \"C08\"], \"flags\": [\"price_scale\", \"duplicate_record\", \"non_arms_length\", \"cross_jurisdiction_comp\"], \"rationale\": \"Used arm's-length IN St. Joseph County sales (C01, C02 with corrected price scale, C04, C06, C07) adjusted to price per sqft applied to subject's 1,973 sqft, excluding a duplicate MLS record, a family (non-arm's-length) transfer, and an out-of-state Michigan comp.\"}",
+   "scores": {
+    "valuation": 0.911914172783738,
+    "calibration": 0.7647280255975908,
+    "exclusion": 1.0,
+    "flags": 1.0,
+    "jurisdiction": 1.0,
+    "composite": 0.9265198569546396,
+    "parse_ok": true,
+    "ape": 0.0220214568040655,
+    "covered": true,
+    "handled": {
+     "cross_jurisdiction_comp": true,
+     "duplicate_record": true,
+     "non_arms_length": true,
+     "price_scale": true
+    }
+   }
+  },
+  {
+   "id": "PRX-0012",
+   "response": "{\"estimate_usd\": 206000, \"p10_usd\": 190500, \"p90_usd\": 216000, \"jurisdiction\": {\"state\": \"IN\", \"county\": \"Porter\"}, \"excluded_comps\": [\"C03\", \"C04\", \"C05\", \"C06\", \"C07\"], \"flags\": [\"multi_parcel_sale\", \"non_arms_length\", \"outlier\", \"jurisdiction_mismatch\"], \"rationale\": \"Excluding a multi-parcel sale group (C03/C04/C06), a family (non-arms-length) transfer (C05), and a clear price outlier (C07), the remaining five comparable sales in Porter County, IN average about $119.9/sqft, applied to the subject's 1,718 sqft.\"}",
+   "scores": {
+    "valuation": 0.9588033349681216,
+    "calibration": 0.7915644923982343,
+    "exclusion": 1.0,
+    "flags": 1.0,
+    "jurisdiction": 1.0,
+    "composite": 0.9459538989700834,
+    "parse_ok": true,
+    "ape": 0.010299166257969592,
+    "covered": true,
+    "handled": {
+     "jurisdiction_mismatch": true,
+     "multi_parcel_sale": true,
+     "non_arms_length": true,
+     "outlier": true
+    }
+   }
+  },
+  {
+   "id": "PRX-0013",
+   "response": "{\"estimate_usd\": 190000, \"p10_usd\": 165000, \"p90_usd\": 215000, \"jurisdiction\": {\"state\": \"MI\", \"county\": \"Cass\"}, \"excluded_comps\": [\"C01\", \"C07\", \"C08\", \"C09\"], \"flags\": [\"outlier\", \"multi_parcel_sale\", \"duplicate_record\"], \"rationale\": \"Estimate based on price-per-sqft of comparable Cass County MI sales after excluding an implausibly high-priced record and a multi-parcel/duplicate sale (same sale_id, grantor/grantee, and price across three parcels, two with zero sqft).\"}",
+   "scores": {
+    "valuation": 0.8605664488017429,
+    "calibration": 0.5461147421931736,
+    "exclusion": 1.0,
+    "flags": 0.8,
+    "jurisdiction": 1.0,
+    "composite": 0.8373928830791576,
+    "parse_ok": true,
+    "ape": 0.034858387799564274,
+    "covered": true,
+    "handled": {
+     "multi_parcel_sale": true,
+     "outlier": true
+    }
+   }
+  },
+  {
+   "id": "PRX-0014",
+   "response": "{\"estimate_usd\": 300000, \"p10_usd\": 283000, \"p90_usd\": 332000, \"jurisdiction\": {\"state\": \"IN\", \"county\": \"LaPorte\"}, \"excluded_comps\": [\"C01\", \"C02\", \"C06\", \"C07\", \"C10\"], \"flags\": [\"non_arms_length\", \"duplicate_record\", \"multi_parcel_sale\", \"outlier\"], \"rationale\": \"Valuation uses arms-length, single-parcel comps in LaPorte County near subject's size/age, excluding a self-dealing sale, a triple-listed multi-parcel sale bundle, and a grossly outlying Long Beach sale.\"}",
+   "scores": {
+    "valuation": 0.8885288399222294,
+    "calibration": 0.7353640095052927,
+    "exclusion": 1.0,
+    "flags": 0.8571428571428571,
+    "jurisdiction": 1.0,
+    "composite": 0.8922028824491559,
+    "parse_ok": true,
+    "ape": 0.027867790019442645,
+    "covered": true,
+    "handled": {
+     "multi_parcel_sale": true,
+     "non_arms_length": true,
+     "outlier": true
+    }
+   }
+  },
+  {
+   "id": "PRX-0015",
+   "response": "{\"estimate_usd\": 166000, \"p10_usd\": 150000, \"p90_usd\": 182000, \"jurisdiction\": {\"state\": \"IN\", \"county\": \"Porter\"}, \"excluded_comps\": [\"C02\", \"C04\", \"C08\", \"C09\", \"C11\", \"C12\"], \"flags\": [\"non_arms_length\", \"duplicate_record\", \"multi_parcel_sale\", \"outlier\"], \"rationale\": \"Used six arms-length Porter County, IN sales (C01,C03,C05,C06,C07,C10) with valid sqft/price data, excluding a quitclaim self-transfer, a triple-listed multi-parcel sale with missing sqft on two entries, a duplicate raw-format record of C10, and a grossly out-of-range price outlier, then applied the group's average price-per-square-foot to the subject's 1,298 sqft.\"}",
+   "scores": {
+    "valuation": 0.985594237695078,
+    "calibration": 0.6798719487795117,
+    "exclusion": 1.0,
+    "flags": 1.0,
+    "jurisdiction": 1.0,
+    "composite": 0.9316526610644258,
+    "parse_ok": true,
+    "ape": 0.003601440576230492,
+    "covered": true,
+    "handled": {
+     "duplicate_record": true,
+     "multi_parcel_sale": true,
+     "non_arms_length": true,
+     "outlier": true
+    }
+   }
+  },
+  {
+   "id": "PRX-0016",
+   "response": "{\"estimate_usd\": 185000, \"p10_usd\": 172000, \"p90_usd\": 201000, \"jurisdiction\": {\"state\": \"IN\", \"county\": \"La Porte\"}, \"excluded_comps\": [\"C01\",\"C02\",\"C03\",\"C04\",\"C07\"], \"flags\": [\"multi_parcel_sale\",\"duplicate_record\",\"non_arms_length\",\"price_scale\",\"jurisdiction_mismatch\"], \"rationale\": \"Excluded a multi-parcel bulk sale group (C01/C03/C07), a family quitclaim transfer (C02), and a duplicate re-listing of the same sale (C04, kept as C08), corrected a cents-scaled price (C06), and valued the subject (LaPorte County, IN, per its 46-prefix parcel despite the Michiana, MI mailing address) via price-per-sqft from the remaining five arm's-length comps.\"}",
+   "scores": {
+    "valuation": 0.900896151818661,
+    "calibration": 0.7452117378316641,
+    "exclusion": 1.0,
+    "flags": 1.0,
+    "jurisdiction": 1.0,
+    "composite": 0.9193111931119311,
+    "parse_ok": true,
+    "ape": 0.024775962045334738,
+    "covered": true,
+    "handled": {
+     "duplicate_record": true,
+     "jurisdiction_mismatch": true,
+     "multi_parcel_sale": true,
+     "non_arms_length": true,
+     "price_scale": true
+    }
+   }
+  },
+  {
+   "id": "PRX-0017",
+   "response": "{\"estimate_usd\": 333500, \"p10_usd\": 313800, \"p90_usd\": 349500, \"jurisdiction\": {\"state\": \"IN\", \"county\": \"Porter\"}, \"excluded_comps\": [\"C02\", \"C04\", \"C06\", \"C07\", \"C10\"], \"flags\": [\"non_arms_length\", \"duplicate_record\", \"multi_parcel_sale\"], \"rationale\": \"Used price-per-square-foot from five clean arm's-length Porter County WD sales (C01, C03, C05, C08, C09) applied to the subject's 2,144 sqft, after excluding a quitclaim (non-arm's-length) sale and a repeated/multi-parcel transaction group reported under duplicate sale IDs.\"}",
+   "scores": {
+    "valuation": 0.9976026370991908,
+    "calibration": 0.8216961342523225,
+    "exclusion": 1.0,
+    "flags": 1.0,
+    "jurisdiction": 1.0,
+    "composite": 0.9636200179802218,
+    "parse_ok": true,
+    "ape": 0.0005993407252022775,
+    "covered": true,
+    "handled": {
+     "duplicate_record": true,
+     "multi_parcel_sale": true,
+     "non_arms_length": true
+    }
+   }
+  },
+  {
+   "id": "PRX-0018",
+   "response": "{\"estimate_usd\": 197000, \"p10_usd\": 178000, \"p90_usd\": 216000, \"jurisdiction\": {\"state\": \"MI\", \"county\": \"Cass\"}, \"excluded_comps\": [\"C01\", \"C02\", \"C04\", \"C06\"], \"flags\": [\"non_arms_length\", \"outlier\"], \"rationale\": \"Excluded C02 as a price outlier and C01/C04/C06 as suspected non-arm's-length transactions sharing a common recurring grantor/grantee first name (\\\"Diane\\\"), leaving C03, C05, and C07 as reliable comps averaging about $117/sqft applied to the subject's 1,626 sqft.\"}",
+   "scores": {
+    "valuation": 0.9107420861442657,
+    "calibration": 0.6713371389033039,
+    "exclusion": 0.4,
+    "flags": 0.6666666666666666,
+    "jurisdiction": 1.0,
+    "composite": 0.7074900536239405,
+    "parse_ok": true,
+    "ape": 0.022314478463933574,
+    "covered": true,
+    "handled": {
+     "outlier": true
+    }
+   }
+  },
+  {
+   "id": "PRX-0019",
+   "response": "{\"estimate_usd\": 160000, \"p10_usd\": 148000, \"p90_usd\": 172000, \"jurisdiction\": {\"state\": \"IN\", \"county\": \"St. Joseph\"}, \"excluded_comps\": [\"C05\", \"C06\", \"C07\", \"C09\", \"C10\"], \"flags\": [\"duplicate_record\", \"multi_parcel_sale\", \"outlier\"], \"rationale\": \"Excluded a clearly erroneous outlier sale (C06), a set of records sharing sale_id S-11841 with inconsistent parcel/sqft data indicating a multi-parcel sale (C05, C07, C10), and a duplicate SDF record of C02 (C09), then valued the subject at roughly $122/sqft based on the six remaining arm's-length, size/age/acreage-comparable sales within St. Joseph County.\"}",
+   "scores": {
+    "valuation": 0.9975015615240475,
+    "calibration": 0.750156152404747,
+    "exclusion": 1.0,
+    "flags": 1.0,
+    "jurisdiction": 1.0,
+    "composite": 0.9492816989381636,
+    "parse_ok": true,
+    "ape": 0.0006246096189881324,
+    "covered": true,
+    "handled": {
+     "duplicate_record": true,
+     "multi_parcel_sale": true,
+     "outlier": true
+    }
+   }
+  },
+  {
+   "id": "PRX-0020",
+   "response": "{\"estimate_usd\": 177000, \"p10_usd\": 160000, \"p90_usd\": 195000, \"jurisdiction\": {\"state\": \"MI\", \"county\": \"Cass\"}, \"excluded_comps\": [\"C01\"], \"flags\": [\"non_arms_length\"], \"rationale\": \"Excluded C01 due to same-surname grantor/grantee suggesting a non-arms-length transfer; remaining Cass County comps averaged ~$109/sqft applied to subject's 1,621 sqft.\"}",
+   "scores": {
+    "valuation": 0.8709677419354839,
+    "calibration": 0.6810643338800801,
+    "exclusion": 1.0,
+    "flags": 1.0,
+    "jurisdiction": 1.0,
+    "composite": 0.8975031893566612,
+    "parse_ok": true,
+    "ape": 0.03225806451612903,
+    "covered": true,
+    "handled": {
+     "non_arms_length": true
+    }
+   }
+  },
+  {
+   "id": "PRX-0021",
+   "response": "{\"estimate_usd\": 385000, \"p10_usd\": 350000, \"p90_usd\": 420000, \"jurisdiction\": {\"state\": \"IN\", \"county\": \"Porter\"}, \"excluded_comps\": [\"C03\", \"C05\"], \"flags\": [\"duplicate_record\", \"cross_jurisdiction_comp\", \"jurisdiction_mismatch\"], \"rationale\": \"Subject's parcel number prefix (64-...) matches the Porter County, IN numbering scheme used by comps C01/C02/C04/C06/C07/C08 despite a New Buffalo, MI mailing address, so C03 (a duplicate assessor-web record of C01) and C05 (a differently-formatted, likely non-Porter-County parcel) were excluded, and the remaining comps' price-per-sqft was trended to the 2026-07-01 valuation date and applied to the subject's 2,522 sqft.\"}",
+   "scores": {
+    "valuation": 0.4997077732320281,
+    "calibration": 0.27917397233586594,
+    "exclusion": 1.0,
+    "flags": 1.0,
+    "jurisdiction": 1.0,
+    "composite": 0.7057471264367816,
+    "parse_ok": true,
+    "ape": 0.12507305669199298,
+    "covered": false,
+    "handled": {
+     "cross_jurisdiction_comp": true,
+     "duplicate_record": true,
+     "jurisdiction_mismatch": true
+    }
+   }
+  },
+  {
+   "id": "PRX-0022",
+   "response": "{\"estimate_usd\": 357000, \"p10_usd\": 330000, \"p90_usd\": 385000, \"jurisdiction\": {\"state\": \"IN\", \"county\": \"Porter\"}, \"excluded_comps\": [\"C02\"], \"flags\": [\"non_arms_length\", \"price_scale\"], \"rationale\": \"Subject's parcel prefix (64) identifies Porter County, IN despite the MI mailing address, and value was derived from arm's-length Porter County comps (excluding the quitclaim family transfer C02) after correcting C07's malformed SDF price field.\"}",
+   "scores": {
+    "valuation": 0.930635838150289,
+    "calibration": 0.7476832736948344,
+    "exclusion": 1.0,
+    "flags": 0.8,
+    "jurisdiction": 1.0,
+    "composite": 0.8987274061840536,
+    "parse_ok": true,
+    "ape": 0.017341040462427744,
+    "covered": true,
+    "handled": {
+     "jurisdiction_mismatch": true,
+     "non_arms_length": true,
+     "price_scale": true
+    }
+   }
+  },
+  {
+   "id": "PRX-0023",
+   "response": "{\"estimate_usd\": 185000, \"p10_usd\": 165000, \"p90_usd\": 202000, \"jurisdiction\": {\"state\": \"MI\", \"county\": \"Cass\"}, \"excluded_comps\": [\"C04\"], \"flags\": [\"price_scale\", \"outlier\"], \"rationale\": \"Excluded C04 as a statistical outlier (price/sqft far above all other Cass County comps), corrected C03's malformed price field, and derived value from the remaining comps' price-per-square-foot applied to the subject's 1,863 sqft.\"}",
+   "scores": {
+    "valuation": 0.8797327394209354,
+    "calibration": 0.6566443949517446,
+    "exclusion": 1.0,
+    "flags": 1.0,
+    "jurisdiction": 1.0,
+    "composite": 0.8952487008166296,
+    "parse_ok": true,
+    "ape": 0.030066815144766147,
+    "covered": true,
+    "handled": {
+     "outlier": true,
+     "price_scale": true
+    }
+   }
+  },
+  {
+   "id": "PRX-0024",
+   "response": "{\"estimate_usd\": 187700, \"p10_usd\": 180300, \"p90_usd\": 201300, \"jurisdiction\": {\"state\": \"MI\", \"county\": \"Cass\"}, \"excluded_comps\": [\"C02\", \"C03\", \"C04\", \"C05\", \"C09\"], \"flags\": [\"price_scale\", \"non_arms_length\", \"multi_parcel_sale\", \"duplicate_record\", \"cross_jurisdiction_comp\"], \"rationale\": \"Used arm's-length, single-parcel, same-jurisdiction (Cass County, MI) sales\u2014C01, C06, C07 (price rescaled from SDF cents format), C08, C10\u2014applying a price-per-sqft average (~$122/sqft) to the subject's 1,540 sqft, while excluding the Indiana comp, the quit-claim (non-arm's-length) sale, and the triplicate multi-parcel sale records sharing sale_id S-73893.\"}",
+   "scores": {
+    "valuation": 0.9661912308505018,
+    "calibration": 0.815108293713682,
+    "exclusion": 1.0,
+    "flags": 0.888888888888889,
+    "jurisdiction": 1.0,
+    "composite": 0.9362123613312203,
+    "parse_ok": true,
+    "ape": 0.008452192287374538,
+    "covered": true,
+    "handled": {
+     "cross_jurisdiction_comp": true,
+     "multi_parcel_sale": true,
+     "non_arms_length": true,
+     "price_scale": true
+    }
+   }
+  },
+  {
+   "id": "PRX-0025",
+   "response": "{\"estimate_usd\": 283400, \"p10_usd\": 268000, \"p90_usd\": 298000, \"jurisdiction\": {\"state\": \"IN\", \"county\": \"LaPorte\"}, \"excluded_comps\": [\"C06\", \"C07\"], \"flags\": [\"outlier\", \"non_arms_length\"], \"rationale\": \"Valuation based on price-per-sqft of five arms-length WD comps in LaPorte County after excluding an implausibly high-priced sale (C06) and a quitclaim family transfer (C07).\"}",
+   "scores": {
+    "valuation": 0.9572039942938659,
+    "calibration": 0.8216833095577746,
+    "exclusion": 1.0,
+    "flags": 1.0,
+    "jurisdiction": 1.0,
+    "composite": 0.9514978601997147,
+    "parse_ok": true,
+    "ape": 0.010699001426533523,
+    "covered": true,
+    "handled": {
+     "non_arms_length": true,
+     "outlier": true
+    }
+   }
+  },
+  {
+   "id": "PRX-0026",
+   "response": "{\"estimate_usd\": 147000, \"p10_usd\": 140000, \"p90_usd\": 157000, \"jurisdiction\": {\"state\": \"IN\", \"county\": \"St. Joseph\"}, \"excluded_comps\": [\"C01\", \"C03\", \"C07\"], \"flags\": [\"cross_jurisdiction_comp\", \"outlier\", \"duplicate_record\"], \"rationale\": \"Excluding the Michigan-format comp, the extreme-price outlier, and a duplicate of C05, the remaining St. Joseph County, IN sales cluster around $100-110/sqft with C04 (nearly identical size, age, and lot) anchoring the estimate near $147,000.\"}",
+   "scores": {
+    "valuation": 0.8881118881118881,
+    "calibration": 0.8018648018648018,
+    "exclusion": 1.0,
+    "flags": 0.8571428571428571,
+    "jurisdiction": 1.0,
+    "composite": 0.9053779553779553,
+    "parse_ok": true,
+    "ape": 0.027972027972027972,
+    "covered": true,
+    "handled": {
+     "cross_jurisdiction_comp": true,
+     "duplicate_record": true,
+     "jurisdiction_mismatch": true,
+     "outlier": true
+    }
+   }
+  },
+  {
+   "id": "PRX-0027",
+   "response": "{\"estimate_usd\": 259500, \"p10_usd\": 243000, \"p90_usd\": 276000, \"jurisdiction\": {\"state\": \"IN\", \"county\": \"Porter\"}, \"excluded_comps\": [\"C02\", \"C03\", \"C04\", \"C06\", \"C10\"], \"flags\": [\"multi_parcel_sale\", \"duplicate_record\", \"cross_jurisdiction_comp\"], \"rationale\": \"Using Porter County, IN comps with valid single-parcel arms-length sales (C01, C05, C07, C08, C09), price-per-sqft averaged ~$158 and applied to subject's 1,640 sqft, after excluding a mis-attributed MI comp, a duplicated Portage sale, and a multi-parcel Valparaiso transaction reported under three different parcels.\"}",
+   "scores": {
+    "valuation": 0.9110776186887717,
+    "calibration": 0.7927656367746797,
+    "exclusion": 1.0,
+    "flags": 0.7499999999999999,
+    "jurisdiction": 1.0,
+    "composite": 0.8943764129615674,
+    "parse_ok": true,
+    "ape": 0.022230595327807082,
+    "covered": true,
+    "handled": {
+     "cross_jurisdiction_comp": true,
+     "duplicate_record": true,
+     "jurisdiction_mismatch": true,
+     "multi_parcel_sale": true,
+     "price_scale": false
+    }
+   }
+  },
+  {
+   "id": "PRX-0028",
+   "response": "{\"estimate_usd\": 240700, \"p10_usd\": 222000, \"p90_usd\": 256000,\n \"jurisdiction\": {\"state\": \"MI\", \"county\": \"Berrien\"},\n \"excluded_comps\": [\"C04\", \"C06\", \"C08\", \"C09\", \"C10\"],\n \"flags\": [\"price_scale\", \"non_arms_length\", \"multi_parcel_sale\", \"duplicate_record\", \"cross_jurisdiction_comp\"],\n \"rationale\": \"Used five arm's-length, single-parcel Berrien County MI comps (C01 price rescaled from SDF cents format) to derive a price-per-sqft estimate for the subject, excluding the Indiana comp, the self-transfer quitclaim, and the triplicate multi-parcel Hicks/Reyes sale.\"}",
+   "scores": {
+    "valuation": 0.9074675324675324,
+    "calibration": 0.770021645021645,
+    "exclusion": 1.0,
+    "flags": 0.888888888888889,
+    "jurisdiction": 1.0,
+    "composite": 0.9095779220779221,
+    "parse_ok": true,
+    "ape": 0.023133116883116884,
+    "covered": true,
+    "handled": {
+     "cross_jurisdiction_comp": true,
+     "multi_parcel_sale": true,
+     "non_arms_length": true,
+     "price_scale": true
+    }
+   }
+  },
+  {
+   "id": "PRX-0029",
+   "response": "{\"estimate_usd\": 120000, \"p10_usd\": 105000, \"p90_usd\": 138000, \"jurisdiction\": {\"state\": \"IN\", \"county\": \"La Porte\"}, \"excluded_comps\": [\"C01\", \"C02\", \"C03\", \"C04\", \"C05\", \"C06\", \"C07\"], \"flags\": [\"cross_jurisdiction_comp\", \"non_arms_length\", \"outlier\", \"price_scale\"], \"rationale\": \"Only C08 lies within the subject's actual jurisdiction (La Porte County, IN) with a valid arm's-length WD sale, so the estimate is derived from its price-per-sqft adjusted to the subject's smaller size, while all Michigan comps are excluded as cross-jurisdiction and C04/C06/C03 carry additional data-quality issues.\"}",
+   "scores": {
+    "valuation": 0.3970276008492569,
+    "calibration": 0.22151450813871187,
+    "exclusion": 0.4,
+    "flags": 0.888888888888889,
+    "jurisdiction": 0.0,
+    "composite": 0.3967445152158528,
+    "parse_ok": true,
+    "ape": 0.15074309978768577,
+    "covered": false,
+    "handled": {
+     "cross_jurisdiction_comp": false,
+     "jurisdiction_mismatch": false,
+     "non_arms_length": true,
+     "outlier": true,
+     "price_scale": false
+    }
+   }
+  },
+  {
+   "id": "PRX-0030",
+   "response": "{\"estimate_usd\": 225000, \"p10_usd\": 205000, \"p90_usd\": 248000, \"jurisdiction\": {\"state\": \"MI\", \"county\": \"Berrien\"}, \"excluded_comps\": [\"C03\"], \"flags\": [\"price_scale\"], \"rationale\": \"Excluding C03 as a likely decimal/price-scale error (price/sqft ~10x the other comps), the remaining Berrien County comps average roughly $162/sqft, applied to the subject's 1,387 sqft.\"}",
+   "scores": {
+    "valuation": 0.9477712742008104,
+    "calibration": 0.6773225273900645,
+    "exclusion": 1.0,
+    "flags": 0.0,
+    "jurisdiction": 1.0,
+    "composite": 0.769795887738256,
+    "parse_ok": true,
+    "ape": 0.013057181449797388,
+    "covered": true,
+    "handled": {
+     "outlier": true
+    }
+   }
+  }
+ ]
+}
