@@ -112,5 +112,9 @@
   "anthropic:claude-opus-5-5": {
     "first_seen": "2026-09-22T17:39:19Z",
     "benchmarked": false
+  },
+  "anthropic:claude-sonnet-5-5": {
+    "first_seen": "2026-09-28T20:08:10Z",
+    "benchmarked": false
   }
 }
