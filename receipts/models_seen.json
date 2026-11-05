@@ -120,5 +120,9 @@
   "anthropic:claude-haiku-5-5": {
     "first_seen": "2026-10-07T19:22:02Z",
     "benchmarked": false
+  },
+  "gemini:gemini-omni-1.2-flash": {
+    "first_seen": "2026-11-05T20:41:08Z",
+    "benchmarked": false
   }
 }
